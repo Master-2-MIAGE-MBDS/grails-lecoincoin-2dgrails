@@ -1,5 +1,5 @@
 package com.mbds.grails
-
+// Class: Annonce
 class Annonce {
 
     String title
