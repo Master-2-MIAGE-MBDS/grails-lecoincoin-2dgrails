@@ -27,6 +27,9 @@ class AnnonceController {
     def create() {
         respond new Annonce(params)
     }
+    def createan() {
+        respond new Annonce(params)
+    }
 
 
     def save(Annonce annonce) {

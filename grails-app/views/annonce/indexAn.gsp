@@ -68,36 +68,67 @@
     </div>
 </header>
 <!-- Section-->
-<section class="py-5">
-    <div class="card">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <g:each in="${annonceList}">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">${it.title}</h5>
-                                <!-- Product price-->
-                                ${it.price}
-                                <p>${it.description}</p>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Voir Plus</a>
-                            </div>
-                        </div>
+<section class="wrapper py-5">
+    <div class="container-fostrap card">
+        <div>
+            <div class="row">
+                    <div class="search col-md-6"><i class='bx bx-search-alt'></i> <input type="text" placeholder="Rechercher">
                     </div>
+
+                <div class="col-md-6"><g:link class="create btn btn-primary" action="create">
+                   + Nouvelle annonce
+                </g:link></div>
+
+            </div>
+
+            <h1 class="heading">
+                Liste des Annonces
+            </h1>
+        </div>
+
+        <div class="content">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <g:each in="${annonceList}">
+                        <div class="ad col-xs-12 col-sm-4">
+                            <div class="card">
+                                <a class="img-card" href="">
+                                    <img class="card-img-top" src="https://dummyimage.com/600x400/ab9eab/b5b6c4.jpg"
+                                         alt="..."/>
+                                </a>
+
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <g:link class="show" action="show" id="${it.id}">${it.title}
+                                        </g:link>
+                                    </h4>
+
+                                    <p class="">
+                                        ${it.description}
+                                    </p>
+
+                                    <p class="price"><b>${it.price}</b> €</p>
+                                </div>
+
+                                <div class="card-read-more">
+                                    <a href="" class="btn btn-link btn-block">
+                                        Voir plus
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </g:each>
+
                 </div>
 
-            </g:each>
+                <div class="pagination">
+                    <g:paginate total="${annonceCount ?: 0}" max="9"/>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 <!-- Footer-->
 <footer class="py-5 bg-dark">
     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
