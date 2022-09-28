@@ -15,6 +15,10 @@ class UserController {
         params.max = Math.min(max ?: 10, 100)
         respond userService.list(params), model:[userCount: userService.count()]
     }
+    def ListeUsers(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond userService.list(params), model:[userCount: userService.count()]
+    }
 
     def show(Long id) {
         respond userService.get(id)
