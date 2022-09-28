@@ -37,7 +37,10 @@
                         <div class="col col-5" data-label="Payment Status">${it.enabled}</div>
                         <div class="col col-6" data-label="Payment Status">Annonce</div>
                         <div class="col col-7" data-label="Payment Status">
-                            Actions
+                            <a class="icon"></a>
+
+
+
                         </div>
                     </li>
                 </g:each>

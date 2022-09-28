@@ -58,6 +58,13 @@ small {
 *.col-7 {
     flex-basis: 25%;
 }
+.icon-search { color:white; background-color:black; }
+
+.icon{ background-image: url(../images/skin/delete.png) no-repeat;
+    background-repeat: no-repeat;
+    height: 21px;
+    display: block;
+}
 
 @media all and (max-width: 767px) {
     .table-header {
