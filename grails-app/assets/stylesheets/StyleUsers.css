@@ -57,10 +57,26 @@ small {
 }
 *.col-7 {
     flex-basis: 25%;
+
+}
+.icon{
+  flex-direction: row;
+    display:inline-block;
+    width: auto;
 }
 .icon-search { color:white; background-color:black; }
 
-.icon{ background-image: url(../images/skin/delete.png) no-repeat;
+.iconDelete{ background-image: url(../images/skin/delete.png);
+    background-repeat: no-repeat;
+    height: 21px;
+    display: block;
+}
+.iconUpdate{ background-image: url(../images/skin/update.jpg);
+    background-repeat: no-repeat;
+    height: 21px;
+    display: block;
+}
+.iconView{ background-image: url(../images/skin/view.png);
     background-repeat: no-repeat;
     height: 21px;
     display: block;

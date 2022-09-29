@@ -37,8 +37,11 @@
                         <div class="col col-5" data-label="Payment Status">${it.enabled}</div>
                         <div class="col col-6" data-label="Payment Status">Annonce</div>
                         <div class="col col-7" data-label="Payment Status">
-                            <a class="icon"></a>
-
+                            <p class="icon">
+                                <a class="iconDelete"></a>
+                                <a class="iconUpdate"></a>
+                                <a class="iconView"></a>
+                            </p>
 
 
                         </div>
