@@ -5,9 +5,9 @@ import grails.gorm.transactions.Transactional
 
 @Transactional
 @Service(Annonce)
-class AnnonceService {
+class AnnonceServService {
 
-    def list() {
-        Annonce.list()
+    def createAnnonce() {
+
     }
 }

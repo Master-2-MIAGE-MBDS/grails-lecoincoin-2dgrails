@@ -77,7 +77,7 @@
                         <div class="form-row">
                             <div class="name">Auteur</div>
                             <div class="value">
-                                <g:select name="user.age" from="${18..65}" value="${age}"/>
+                                <g:select name="author" from="${this.annonce}" value="${user?.username}"/>
                             </div>
                         </div>
 

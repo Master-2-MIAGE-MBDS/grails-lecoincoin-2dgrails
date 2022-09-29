@@ -3,7 +3,7 @@ package com.mbds.grails
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class AnnonceServiceSpec extends Specification implements ServiceUnitTest<AnnonceService>{
+class AnnonceServServiceSpec extends Specification implements ServiceUnitTest<AnnonceServService>{
 
     def setup() {
     }

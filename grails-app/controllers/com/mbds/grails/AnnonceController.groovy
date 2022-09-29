@@ -6,21 +6,24 @@ import static org.springframework.http.HttpStatus.*
 
 @Secured('ROLE_ADMIN')
 class AnnonceController {
-    AnnonceOldService AnnonceOldService
+    AnnonceService AnnonceService
+    UserService userService
+
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 12, 100)
-        respond AnnonceOldService.list(params), model:[annonceCount: AnnonceOldService.count()]
+        respond AnnonceService.list(params), model:[annonceCount: AnnonceService.count()]
     }
     def indexAn(Integer max) {
         params.max = Math.min(max ?: 12, 100)
-        respond AnnonceOldService.list(params), model:[annonceCount: AnnonceOldService.count()]
+        respond userService.list(params)
+        respond AnnonceService.list(params), model:[annonceCount: AnnonceService.count()]
     }
 
     def show(Long id) {
-        respond AnnonceOldService.get(id)
+        respond AnnonceService.get(id)
     }
 
     def create() {
@@ -38,7 +41,7 @@ class AnnonceController {
         }
 
         try {
-            AnnonceOldService.save(annonce)
+            AnnonceService.save(annonce)
         } catch (ValidationException e) {
             respond annonce.errors, view:'create'
             return
@@ -54,7 +57,7 @@ class AnnonceController {
     }
 
     def edit(Long id) {
-        respond AnnonceOldService.get(id)
+        respond AnnonceService.get(id)
     }
 
     def update(Annonce annonce) {
@@ -64,7 +67,7 @@ class AnnonceController {
         }
 
         try {
-            AnnonceOldService.save(annonce)
+            AnnonceService.save(annonce)
         } catch (ValidationException e) {
             respond annonce.errors, view:'edit'
             return
@@ -85,7 +88,7 @@ class AnnonceController {
             return
         }
 
-        AnnonceOldService.delete(id)
+        AnnonceService.delete(id)
 
         request.withFormat {
             form multipartForm {
