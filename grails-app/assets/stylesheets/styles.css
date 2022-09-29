@@ -34,25 +34,34 @@ h1.heading {
     margin: 0 0 0.5em;
     color: #505050;
 }
-@media (min-width: 450px) {
+@media (max-width: 450px) {
     h1.heading {
         font-size: 3.55em;
     }
+    .ad {
+        width: 360px;
+    }
 }
-@media (min-width: 760px) {
+@media (min-width: 450px) and (max-width: 760px) {
     h1.heading {
         font-size: 3.05em;
     }
+    .ad {
+        width: 450px;
+    }
 }
-@media (min-width: 900px) {
+@media(min-width: 760px) and (max-width: 900px) {
     h1.heading {
         font-size: 3.25em;
         margin: 0 0 0.3em;
     }
-}
-@media screen and (min-width: 1430px) {
     .ad {
-        width: 600px;
+        width: 352px;
+    }
+}
+@media screen and (min-width: 900px) and (min-width: 1430px) {
+    .ad {
+        width: 400px;
     }
 }
 .card {

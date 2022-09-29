@@ -2,11 +2,14 @@ package com.mbds.grails
 
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.springframework.web.multipart.MultipartFile
+
 import static org.springframework.http.HttpStatus.*
 
 @Secured('ROLE_ADMIN')
 class AnnonceController {
     AnnonceService AnnonceService
+    AnnonceServService annonceServService
     UserService userService
 
 
@@ -18,7 +21,6 @@ class AnnonceController {
     }
     def indexAn(Integer max) {
         params.max = Math.min(max ?: 12, 100)
-        respond userService.list(params)
         respond AnnonceService.list(params), model:[annonceCount: AnnonceService.count()]
     }
 
@@ -30,6 +32,7 @@ class AnnonceController {
         respond new Annonce(params)
     }
     def createan() {
+        respond userService.list(params)
         respond new Annonce(params)
     }
 
@@ -41,6 +44,9 @@ class AnnonceController {
         }
 
         try {
+            request.getFiles("illustrations").each { file ->
+                file.transferTo(config.illustrations.baseUrl)
+            }
             AnnonceService.save(annonce)
         } catch (ValidationException e) {
             respond annonce.errors, view:'create'
@@ -55,6 +61,7 @@ class AnnonceController {
             '*' { respond annonce, [status: CREATED] }
         }
     }
+
 
     def edit(Long id) {
         respond AnnonceService.get(id)

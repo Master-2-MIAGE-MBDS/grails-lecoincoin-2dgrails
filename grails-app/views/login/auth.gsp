@@ -2,8 +2,7 @@
 <head>
     <meta name="layout" content="${gspLayout ?: 'main'}"/>
     <title><g:message code='springSecurity.login.title'/></title>
-    <style type="text/css" media="screen">
-    body { background-color: red;}
+    <style type="text/css" media="screen">‡
     #login {
         margin: 15px 0px;
         padding: 0px;

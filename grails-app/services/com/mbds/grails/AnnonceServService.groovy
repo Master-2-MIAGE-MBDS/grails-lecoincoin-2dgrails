@@ -1,5 +1,4 @@
 package com.mbds.grails
-
 import grails.gorm.services.Service
 import grails.gorm.transactions.Transactional
 
@@ -7,7 +6,7 @@ import grails.gorm.transactions.Transactional
 @Service(Annonce)
 class AnnonceServService {
 
-    def createAnnonce() {
-
+    def createAnnonce(annonce) {
+        new Annonce(title: annonce.title,description: annonce.description,price: annonce.price,active: annonce.active).save()
     }
 }

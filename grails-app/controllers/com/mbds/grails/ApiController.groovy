@@ -46,7 +46,21 @@ class ApiController {
      * POST / GET
      */
     def annonces() {
+        def annoncesInstance = Annonce.list()
 
+        switch (request.getMethod()) {
+
+            case "GET":
+                renderThis(request.getHeader("Accept"), annoncesInstance)
+                break;
+            case "POST":
+
+                break;
+            default:
+                return response.status = 405
+                break;
+        }
+        return response.status = 406
     }
 
     def user() {
