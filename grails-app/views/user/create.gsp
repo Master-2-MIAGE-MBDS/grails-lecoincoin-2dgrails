@@ -25,6 +25,54 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
+            <g:form enctype='multipart/form-data' action="save" method="POST">
+                <div class="form-row">
+                    <div class="name">Password</div>
+
+                    <div class="value">
+                        <g:field class="input--style" type="text" name="password" id="password"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Username</div>
+
+                    <div class="value">
+                        <g:field class="input--style" type="text" name="username" id="username"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Password Expired</div>
+
+                    <div class="value">
+                        <g:checkBox name="passwordExpired" id="passwordExpired" value="${false}"/>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Account Locked</div>
+                    <div class="value">
+                        <g:checkBox name="accountLocked" id="accountLocked" value="${false}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Account Expired</div>
+
+                    <div class="value">
+                        <g:checkBox name="accountExpired" id="accountExpired" value="${false}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Enable</div>
+                    <div class="value">
+                        <g:checkBox name="enabled" id="enabled" value="${false}"/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <fieldset class="buttons">
+                        <g:submitButton name="create" class="save btn btn--radius-2 btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    </fieldset>
+                </div>
+            </g:form>
             <g:form resource="${this.user}" method="POST">
                 <fieldset class="form">
                     <f:all bean="user"/>

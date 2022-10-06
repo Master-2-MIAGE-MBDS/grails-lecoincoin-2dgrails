@@ -9,10 +9,9 @@
     <body>
         <a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+            <a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
+            <g:link class="btn create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+
         </div>
         <div id="list-user" class="content scaffold-list" role="main">
 
@@ -38,9 +37,9 @@
                         <div class="col col-6" data-label="Payment Status">Annonce</div>
                         <div class="col col-7" data-label="Payment Status">
                             <p class="icon">
-                                <a class="iconDelete"></a>
-                                <a class="iconUpdate"></a>
-                                <a class="iconView"></a>
+                                <g:link class="iconDelete"></g:link>
+                                <g:link class="iconUpdate"></g:link>
+                                <g:link class="iconView"></g:link>
                             </p>
 
 

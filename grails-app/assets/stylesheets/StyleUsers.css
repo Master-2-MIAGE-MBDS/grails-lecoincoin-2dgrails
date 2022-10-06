@@ -61,26 +61,57 @@ small {
 }
 .icon{
   flex-direction: row;
-    display:inline-block;
-    width: auto;
+    display:inline-flex;
+
+
 }
 .icon-search { color:white; background-color:black; }
 
 .iconDelete{ background-image: url(../images/skin/delete.png);
     background-repeat: no-repeat;
     height: 21px;
-    display: block;
+    display:block;
+    width: 25px;
+
 }
 .iconUpdate{ background-image: url(../images/skin/update.jpg);
     background-repeat: no-repeat;
     height: 21px;
-    display: block;
+    display:block;
+    width: 25px;
+
 }
 .iconView{ background-image: url(../images/skin/view.png);
     background-repeat: no-repeat;
     height: 21px;
-    display: block;
+    display:block;
+    width: 25px;
+
 }
+
+.btn{
+    background-color: #ffb69b;
+justify-content: flex-end;
+
+}
+.nav{
+    color: #ffffff;
+    display: flex;
+    padding-left: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+div .nav{
+    width: 100%;
+
+}
+.nav, .home{
+    display: inline-flex;
+}
+.nav, .create{
+    display: inline-flex;
+}
+
 
 @media all and (max-width: 767px) {
     .table-header {
