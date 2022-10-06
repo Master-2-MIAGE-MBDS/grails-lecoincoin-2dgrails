@@ -11,7 +11,6 @@
         <div class="nav" role="navigation">
             <a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
             <g:link class="btn create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
-
         </div>
         <div id="list-user" class="content scaffold-list" role="main">
 
