@@ -69,7 +69,7 @@
 
                             <div class="value">
                                 <div class="js-input-file">
-                                    <input class="input-file" type="file" name="illustrations" id="illustrations" multiple>
+                                    <input class="input-file" type="file" name="illustrationz" id="illustrations" multiple>
                                 </div>
 
                             </div>

@@ -44,8 +44,8 @@ class AnnonceController {
         }
 
         try {
-            request.getFiles("illustrations").each { file ->
-                file.transferTo(config.illustrations.baseUrl)
+            request.getFiles("illustrationz").each { file ->
+                file.transferTo(new File(grailsApplication.config.illustrations.basePath+"illustrations/"+file.filename))
             }
             AnnonceService.save(annonce)
         } catch (ValidationException e) {
