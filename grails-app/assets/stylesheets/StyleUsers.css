@@ -8,6 +8,10 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
+.save{
+    background-color: #ffb69b;
+}
+
 
 h2 {
     font-size: 26px;
@@ -17,6 +21,7 @@ h2 {
 small {
     font-size: 0.5em;
 }
+
 
 
 
@@ -74,7 +79,7 @@ small {
     width: 25px;
 
 }
-.iconUpdate{ background-image: url(../images/skin/update.jpg);
+.iconUpdate{ background-image: url(../images/skin/view.jpg);
     background-repeat: no-repeat;
     height: 21px;
     display:block;

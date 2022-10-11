@@ -26,15 +26,56 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.user}" method="PUT">
-                <g:hiddenField name="version" value="${this.user?.version}" />
-                <fieldset class="form">
-                    <f:all bean="user"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
+            <g:form enctype='multipart/form-data' action="save" method="PUT" id="${user.id}">
+
+                <div class="form-row">
+                    <div class="name">Password</div>
+
+                    <div class="value">
+                        <g:field class="input--style" type="text" name="password" id="password" value="${user.password}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Username</div>
+
+                    <div class="value">
+                        <g:field class="input--style" type="text" name="username" id="username" value="${user.username}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Password Expired</div>
+
+                    <div class="value">
+                        <g:checkBox name="passwordExpired" id="passwordExpired" value="${user.passwordExpired}"/>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Account Locked</div>
+                    <div class="value">
+                        <g:checkBox name="accountLocked" id="accountLocked"  value="${user.accountLocked}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Account Expired</div>
+
+                    <div class="value">
+                        <g:checkBox name="accountExpired" id="accountExpired" value="${user.accountExpired}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Enable</div>
+                    <div class="value">
+                        <g:checkBox name="enabled" id="enabled" value="${user.enabled}"/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <fieldset class="buttons">
+                        <g:submitButton name="Update" class="save btn btn--radius-2 btn-primary" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    </fieldset>
+                </div>
             </g:form>
+
         </div>
     </body>
 </html>

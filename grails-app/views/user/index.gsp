@@ -12,7 +12,7 @@
             <a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
             <g:link class="btn create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>
-        <div id="list-user" class="content scaffold-list" role="main">
+        <div id="list-user" class="scaffold-list" role="main">
 
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
@@ -36,11 +36,12 @@
                         <div class="col col-6" data-label="Payment Status">Annonce</div>
                         <div class="col col-7" data-label="Payment Status">
                             <p class="icon">
-                                <g:link class="iconDelete"></g:link>
-                                <g:link class="iconUpdate"></g:link>
-                                <g:link class="iconView"></g:link>
-                            </p>
+                                <g:link class="iconDelete delete" type="submit"
+                                        value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                                        onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"></g:link>
+                                <g:link class="iconView edit"  action="edit" id="${it.id}"></g:link>
 
+                            </p>
 
                         </div>
                     </li>
