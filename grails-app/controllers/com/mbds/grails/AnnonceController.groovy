@@ -28,6 +28,11 @@ class AnnonceController {
         respond AnnonceService.get(id)
     }
 
+    def showan(Long id) {
+        respond userService.get(id)
+        respond AnnonceService.get(id)
+    }
+
     def create() {
         respond new Annonce(params)
     }
@@ -64,6 +69,11 @@ class AnnonceController {
 
 
     def edit(Long id) {
+        respond AnnonceService.get(id)
+    }
+    def editan(Long id) {
+        respond userService.list(params)
+        respond userService.get(id)
         respond AnnonceService.get(id)
     }
 

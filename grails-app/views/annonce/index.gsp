@@ -60,9 +60,8 @@
                                     </div>
 
                                     <div class="card-read-more">
-                                        <a href="" class="btn btn-link btn-block">
-                                            Voir plus
-                                        </a>
+                                        <g:link class="show btn btn-link btn-block" action="show" id="${it.id}">Voir plus
+                                        </g:link>
                                     </div>
                                 </div>
                             </div>
