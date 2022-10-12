@@ -32,7 +32,6 @@ class AnnonceController {
         respond userService.get(id)
         respond AnnonceService.get(id)
     }
-
     def create() {
         respond new Annonce(params)
     }
@@ -67,7 +66,6 @@ class AnnonceController {
         }
     }
 
-
     def edit(Long id) {
         respond AnnonceService.get(id)
     }
@@ -76,7 +74,6 @@ class AnnonceController {
         respond userService.get(id)
         respond AnnonceService.get(id)
     }
-
     def update(Annonce annonce) {
         if (annonce == null) {
             notFound()
@@ -89,7 +86,6 @@ class AnnonceController {
             respond annonce.errors, view:'edit'
             return
         }
-
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'annonce.label', default: 'Annonce'), annonce.id])
@@ -115,7 +111,6 @@ class AnnonceController {
             '*'{ render status: NO_CONTENT }
         }
     }
-
     protected void notFound() {
         request.withFormat {
             form multipartForm {

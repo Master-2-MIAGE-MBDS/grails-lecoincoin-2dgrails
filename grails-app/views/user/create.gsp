@@ -7,12 +7,14 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-
-        <a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+        <a href="#create-user" class="skip" tabindex="-1">
+            <g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="btn list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><a class="btn home" href="${createLink(uri: '/')}">
+                    <g:message code="default.home.label"/></a></li>
+                <li><g:link class="btn list" action="index">
+                    <g:message code="default.list.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
         <div id="create-user" class="content scaffold-create" role="main">
@@ -23,31 +25,28 @@
             <g:hasErrors bean="${this.user}">
             <ul class="errors" role="alert">
                 <g:eachError bean="${this.user}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"
+                    </g:if>><g:message error="${error}"/></li>
                 </g:eachError>
             </ul>
             </g:hasErrors>
             <g:form enctype='multipart/form-data' action="save" method="POST">
                 <div class="form-row">
                     <div class="name">Password</div>
-
                     <div class="value">
                         <g:field class="input--style" type="text" name="password" id="password"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="name">Username</div>
-
                     <div class="value">
                         <g:field class="input--style" type="text" name="username" id="username"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="name">Password Expired</div>
-
                     <div class="value">
                         <g:checkBox name="passwordExpired" id="passwordExpired" value="${false}"/>
-
                     </div>
                 </div>
                 <div class="form-row">
@@ -69,9 +68,16 @@
                         <g:checkBox name="enabled" id="enabled" value="${false}"/>
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="name">Role</div>
+                    <div class="value">
+                        <g:select from="${this.userList}" optionKey="id" name="Role"/>
+                    </div>
+                </div>
                 <div class="card-footer">
                     <fieldset class="buttons">
-                        <g:submitButton name="create" class="save btn btn--radius-2 btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                        <g:submitButton name="create" class="save btn btn--radius-2 btn-primary"
+                                        value="${message(code: 'default.button.create.label', default: 'Create')}" />
                     </fieldset>
                 </div>
             </g:form>

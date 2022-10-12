@@ -26,28 +26,23 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form enctype='multipart/form-data' action="save" method="PUT" id="${user.id}">
-
+            <g:form enctype='multipart/form-data' action="update" method="PUT" id="${user.id}">
                 <div class="form-row">
                     <div class="name">Password</div>
-
                     <div class="value">
                         <g:field class="input--style" type="text" name="password" id="password" value="${user.password}"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="name">Username</div>
-
                     <div class="value">
                         <g:field class="input--style" type="text" name="username" id="username" value="${user.username}"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="name">Password Expired</div>
-
                     <div class="value">
                         <g:checkBox name="passwordExpired" id="passwordExpired" value="${user.passwordExpired}"/>
-
                     </div>
                 </div>
                 <div class="form-row">
@@ -58,7 +53,6 @@
                 </div>
                 <div class="form-row">
                     <div class="name">Account Expired</div>
-
                     <div class="value">
                         <g:checkBox name="accountExpired" id="accountExpired" value="${user.accountExpired}"/>
                     </div>
