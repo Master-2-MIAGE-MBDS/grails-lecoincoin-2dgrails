@@ -19,21 +19,17 @@ class AnnonceController {
         params.max = Math.min(max ?: 12, 100)
         respond AnnonceService.list(params), model:[annonceCount: AnnonceService.count()]
     }
-    def indexAn(Integer max) {
-        params.max = Math.min(max ?: 12, 100)
-        respond AnnonceService.list(params), model:[annonceCount: AnnonceService.count()]
-    }
 
     def show(Long id) {
         respond AnnonceService.get(id)
     }
 
     def showan(Long id) {
-        respond userService.get(id)
         respond AnnonceService.get(id)
     }
 
     def create() {
+        respond userService.list(params)
         respond new Annonce(params)
     }
     def createan() {
@@ -49,8 +45,18 @@ class AnnonceController {
         }
 
         try {
-            request.getFiles("illustrationz").each { file ->
-                file.transferTo(new File(grailsApplication.config.illustrations.basePath+"illustrations/"+file.filename))
+            List files=[]
+            String name=annonce.title
+            if (annonce.illustrations) {
+            request.getFiles("illustrationFiles").each { file ->
+                    int indexpoint = file.filename.lastIndexOf(".");
+                    String extName = file.filename.substring(indexpoint);
+
+                file.transferTo(new File(grailsApplication.config.illustrations.basePath+name+file.filename+extName))
+                files.add(name+file.filename+extName)
+            }}
+            files.each {
+                annonce.addToIllustrations(new Illustration(filename:it))
             }
             AnnonceService.save(annonce)
         } catch (ValidationException e) {
@@ -69,6 +75,7 @@ class AnnonceController {
 
 
     def edit(Long id) {
+        respond userService.list(params)
         respond AnnonceService.get(id)
     }
     def editan(Long id) {

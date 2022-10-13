@@ -130,5 +130,5 @@ server:
     port: 8081
     
 illustrations:
-    basePath: /Users/missflawless/Documents/perso/UCA/grails/grails-lecoincoin-2dgrails/grails-app/assets/images/
-    baseUrl: http://localhost:8081/assets/
+    basePath: /Users/missflawless/Documents/perso/UCA/grails/grails-lecoincoin-2dgrails/grails-app/assets/images/illustrations/
+    baseUrl: http://localhost:8081/assets/illustrations/

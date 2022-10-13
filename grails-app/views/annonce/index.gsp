@@ -41,10 +41,15 @@
                         <g:each in="${annonceList}">
                             <div class="ad col-xs-12 col-sm-4">
                                 <div class="card">
-                                    <a class="img-card" href="">
-                                        <img class="card-img-top" src="https://dummyimage.com/600x400/ab9eab/b5b6c4.jpg"
+                            <g:link class="show img-card" action="show" id="${it.id}">
+                                <g:if test="${it.illustrations[0]}">
+                                        <img class="card-img-top" src="${grailsApplication.config.illustrations.baseUrl+it.illustrations[0].filename}"
                                              alt="..."/>
-                                    </a>
+                                </g:if>
+                                <g:else> <img class="card-img-top" src="${grailsApplication.config.illustrations.baseUrl+'soon.png'}"
+                                              alt="..."/></g:else>
+                            </g:link>
+
 
                                     <div class="card-content">
                                         <h4 class="card-title">

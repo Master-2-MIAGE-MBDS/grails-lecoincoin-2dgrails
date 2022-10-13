@@ -24,8 +24,9 @@ class BootStrap {
                         // Pour ajouter 5 annonces par utilisateur
                         def annonceInstance = new Annonce(title: username + " " + index, description: "Description de l'annonce", price: 10 * index, active: Boolean.TRUE)
                         (1..5).each {
+                            Integer indexIl ->
                             // Et enfin 5 illustrations par annonce
-                            annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
+                            annonceInstance.addToIllustrations(new Illustration(filename: username + index+indexIl+".jpg"))
                         }
                         // On associe l'annonce créée à l'utilisateur
                         userInstance.addToAnnonces(annonceInstance)
