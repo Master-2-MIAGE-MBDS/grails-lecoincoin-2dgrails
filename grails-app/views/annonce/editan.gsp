@@ -101,7 +101,7 @@
 
                         <div class="card-footer">
                             <fieldset class="buttons">
-                                <g:submitButton name="create" class="save btn btn--radius-2 btn-primary"
+                                <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
                                                 value="Modifier l'annonce"/>
                             </fieldset>
                         </div>

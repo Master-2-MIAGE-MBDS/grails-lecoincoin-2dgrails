@@ -127,10 +127,10 @@ p.price {
     font-size: xx-large;
 }
 
-a.create.btn.btn-primary {
+a.create.bouton.bouton-primary {
     text-decoration: none
 }
-.btn-primary{
+.bouton-primary{
     color: #ff6e14;
     background-color: #ffb69b;
 }
@@ -209,7 +209,7 @@ fieldset {
         margin-bottom: 12px;
     }
 }
-.btn {
+.bouton {
     display: inline-block;
     line-height: 50px;
     padding: 0 30px;
@@ -225,7 +225,7 @@ fieldset {
     font-family: inherit;
 }
 
-.btn--radius {
+.bouton--radius {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -296,7 +296,7 @@ textarea {
 .input-file + label:hover {
     background: #1b1b1b;
 }
-.btn-primary:hover {
+.bouton-primary:hover {
     color: #fff;
     background-color: #ff6e14;
 }
@@ -567,6 +567,6 @@ img.card-img-top {
 
 }
 
-.btn.btn-primary:hover {
+.bouton.bouton-primary:hover {
     background-color: #ff6e14;
 }

@@ -24,7 +24,7 @@
                     <div class="search col-md-6"><i class='bx bx-search-alt'></i> <input type="text" placeholder="Rechercher">
                     </div>
 
-                    <div class="col-md-6"><g:link class="create btn btn-primary" action="create">
+                    <div class="col-md-6"><g:link class="create bouton bouton-primary" action="create">
                         + Nouvelle annonce
                     </g:link></div>
 
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="card-read-more">
-                                        <g:link class="show btn btn-link btn-block" action="show" id="${it.id}">Voir plus
+                                        <g:link class="show bouton bouton-link bouton-block" action="show" id="${it.id}">Voir plus
                                         </g:link>
                                     </div>
                                 </div>
