@@ -11,6 +11,6 @@ class AnnonceServService {
     }
 
     def searchAnnonce(String search){
-        Annonce.
+
     }
 }

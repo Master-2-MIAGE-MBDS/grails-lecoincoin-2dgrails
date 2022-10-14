@@ -83,13 +83,15 @@ img {
 }
 
 .footer {
-    background: #424649;
+    background: #feb672;
     color: #ffffff;
     clear: both;
     font-size: 0.8em;
     margin-top: 1.5em;
     padding: 1em;
     min-height: 1em;
+    display: block;
+    margin-bottom: 0px;
 }
 
 .footer a {
