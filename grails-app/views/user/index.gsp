@@ -23,16 +23,24 @@
                     <div class="col col-3">Password Expired</div>
                     <div class="col col-4">Account Expired </div>
                     <div class="col col-5">Enabled </div>
-                    <div class="col col-6">Annonces</div>
+                    <div class="col col-6">Rôle</div>
                     <div class="col col-6">Actions</div>
                 </li>
                 <g:each in="${userList}">
                     <li class="table-row">
                         <div class="col col-2" data-label="Customer Name">${it.username}</div>
-                        <div class="col col-3" data-label="Amount">${it.accountExpired}</div>
-                        <div class="col col-4" data-label="Payment Status">${it.accountExpired}</div>
-                        <div class="col col-5" data-label="Payment Status">${it.enabled}</div>
-                        <div class="col col-6" data-label="Payment Status">Annonce</div>
+                        <div class="col col-3" data-label="Amount"><g:if test="${it.passwordExpired}"><span class="badge danger">Expired</span>
+                        </g:if><g:else><span class="badge">Not Expired</span></g:else></div>
+                        <div class="col col-4" data-label="Payment Status"><g:if test="${it.accountExpired}"><span class="badge danger">Expired</span>
+                        </g:if><g:else><span class="badge">Not Expired</span></g:else></div>
+                        <div class="col col-5" data-label="Payment Status"><g:if test="${it.enabled}"><span class="badge danger">Disabled</span>
+                        </g:if><g:else><span class="badge">Enabled</span></g:else></div>
+                        <div class="col col-6" data-label="Payment Status">
+                            <g:each var="role" in="${it.getAuthorities()}">
+                                <g:if test="${role.authority=="ROLE_ADMIN" || role.authority=="Administrator" }"><span class="badge admin">Administrator</span>
+                                </g:if><g:else><span class="badge">advertiser</span></g:else>
+                            </g:each>
+                        </div>
                         <div class="col col-7" data-label="Payment Status">
                             <g:form resource="${it}" method="DELETE">
                                 <p class="icon">

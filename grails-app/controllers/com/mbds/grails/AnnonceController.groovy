@@ -24,18 +24,10 @@ class AnnonceController {
         respond AnnonceService.get(id)
     }
 
-    def showan(Long id) {
-        respond AnnonceService.get(id)
-    }
     def create() {
         respond userService.list(params)
         respond new Annonce(params)
     }
-    def createan() {
-        respond userService.list(params)
-        respond new Annonce(params)
-    }
-
 
     def save(Annonce annonce) {
         if (annonce == null) {
@@ -88,6 +80,19 @@ class AnnonceController {
         }
 
         try {
+            List files=[]
+            String name=annonce.title
+            if (annonce.illustrations) {
+                request.getFiles("illustrationFiles").each { file ->
+                int indexpoint = file.filename.lastIndexOf(".");
+                String extName = file.filename.substring(indexpoint);
+
+                file.transferTo(new File(grailsApplication.config.illustrations.basePath+name+file.filename+extName))
+                files.add(name+file.filename+extName)
+            }}
+            files.each {
+                annonce.addToIllustrations(new Illustration(filename:it))
+            }
             AnnonceService.save(annonce)
         } catch (ValidationException e) {
             respond annonce.errors, view:'edit'
@@ -126,5 +131,8 @@ class AnnonceController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+    def find(String search){
+
     }
 }

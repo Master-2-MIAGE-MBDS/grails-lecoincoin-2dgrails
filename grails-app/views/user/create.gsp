@@ -32,15 +32,22 @@
             </g:hasErrors>
             <g:form enctype='multipart/form-data' action="save" method="POST">
                 <div class="form-row">
-                    <div class="name">Password</div>
-                    <div class="value">
-                        <g:field class="input--style" type="text" name="password" id="password"/>
-                    </div>
-                </div>
-                <div class="form-row">
                     <div class="name">Username</div>
                     <div class="value">
                         <g:field class="input--style" type="text" name="username" id="username"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Password</div>
+                    <div class="value">
+                        <g:field class="input--style" type="password" name="password" id="password"/>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="name">Rôle</div>
+                    <div class="value">
+                        <g:select name="role" from="${['Administrator','Advertiser']}"/>
                     </div>
                 </div>
                 <div class="form-row">
@@ -66,12 +73,6 @@
                     <div class="name">Enable</div>
                     <div class="value">
                         <g:checkBox name="enabled" id="enabled" value="${false}"/>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="name">Role</div>
-                    <div class="value">
-                        <g:select from="${this.userList}" optionKey="id" name="Role"/>
                     </div>
                 </div>
                 <div class="card-footer">

@@ -156,3 +156,14 @@ div .nav{
         text-align: right;
     }
 }
+
+span.badge {
+    background: #ff6e14;
+}
+
+span.badge.danger {
+    background: red;
+}
+span.badge.admin {
+    background: green;
+}

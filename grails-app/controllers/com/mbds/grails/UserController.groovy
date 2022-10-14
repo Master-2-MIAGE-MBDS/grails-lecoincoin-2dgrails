@@ -35,7 +35,9 @@ class UserController {
         }
 
         try {
-            userService.save(user)
+            def userInstance = userService.save(user)
+            def userRole = new Role(authority: params.role).save()
+            UserRole.create(userInstance, userRole, true)
         } catch (ValidationException e) {
             respond user.errors, view:'create'
             return
@@ -61,7 +63,17 @@ class UserController {
         }
 
         try {
-            userService.save(user)
+            def userInstance=userService.save(user)
+            if (params.deleteRole){
+                user.getAuthorities().each {
+                    def userRole = new Role(authority: it.authority).save()
+                    UserRole.remove(userInstance,userRole)
+                }
+            }
+            if (params.addRole){
+                def userRole = new Role(authority: params.role).save()
+                UserRole.create(userInstance, userRole, true)
+            }
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
             return

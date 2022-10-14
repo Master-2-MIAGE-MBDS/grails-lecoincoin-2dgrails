@@ -4,6 +4,8 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <asset:stylesheet src="StyleUsers.css"/>
+
     </head>
     <body>
         <a href="#edit-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -38,6 +40,27 @@
                     <div class="value">
                         <g:field class="input--style" type="text" name="username" id="username" value="${user.username}"/>
                     </div>
+                </div>
+                <div class="form-row"> <div class="name">Rôle(s) Actuel(s)</div>
+                    <div class="value">
+                        <g:each var="role" in="${user.getAuthorities()}">
+                            <g:if test="${role.authority=="ROLE_ADMIN" || role.authority=="Administrator" }"><span class="badge admin">Administrator</span>
+                            </g:if><g:else><span class="badge">advertiser</span></g:else>
+                        </g:each>
+                    </div>
+                    <div class="name">Supprimer ces rôles</div>
+                    <div class="value">
+                        <g:checkBox name="deleteRole" id="deleteRole" value="${FALSE}"/>
+                    </div>
+                    <div class="name">Ajouter un rôle</div>
+                    <div class="value">
+                        <g:checkBox name="addRole" id="addRole" value="${FALSE}" />
+                    </div>
+                    <div class="name">Rôle</div>
+                    <div class="value">
+                        <g:select name="role" from="${['Administrator','Advertiser']}"/>
+                    </div>
+
                 </div>
                 <div class="form-row">
                     <div class="name">Password Expired</div>

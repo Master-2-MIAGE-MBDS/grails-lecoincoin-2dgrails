@@ -11,6 +11,7 @@ class BootStrap {
     def init = { servletContext ->
         def adminUserInstance = new User(username: "admin",password: "admin").save()
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
+        def adviserRole = new Role(authority: "ROLE_ADVISER").save()
         UserRole.create(adminUserInstance, adminRole, true)
 
         // On boucle sur une liste de 5 prénoms
@@ -32,6 +33,8 @@ class BootStrap {
                         userInstance.addToAnnonces(annonceInstance)
                         // Et on sauvegarde l'utilisateur qui va sauvegarder ses annonces qui sauvegarderont leurs illustrations
                         userInstance.save(flush: true, failOnError: true)
+                        UserRole.create(userInstance, adviserRole, true)
+
                 }
         }
 

@@ -9,4 +9,8 @@ class AnnonceServService {
     def createAnnonce(annonce) {
         new Annonce(title: annonce.title,description: annonce.description,price: annonce.price,active: annonce.active).save()
     }
+
+    def searchAnnonce(String search){
+        Annonce.
+    }
 }
