@@ -33,9 +33,9 @@
 <body>
 <div class="nav" role="navigation">
     <ul>
-        <li><a class="home btn btn-primary" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><g:link class="list btn btn-primary" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-        <li><g:link class="create btn btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+        <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+        <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+        <li><g:link class="create bouton bouton-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
     </ul>
 </div>
 <section class="bg-light">
@@ -96,16 +96,16 @@
                         <p>${this.annonce.description}</p>
                         <p class="h3 py-2"><b>Auteur:</b>  ${this.annonce.author.username} </p>
                         <p class="h3 py-2"><b>Status:</b>
-                            <g:if test="${this.annonce.active}"> <span class="btn btn-success"> Annonce active </span></g:if>
-                            <g:else><span class="btn btn-danger"> Annonce inactive </span></g:else></p>
+                            <g:if test="${this.annonce.active}"> <span class="bouton bouton-success"> Annonce active </span></g:if>
+                            <g:else><span class="bouton bouton-danger"> Annonce inactive </span></g:else></p>
                         <p>
                         <div class="nav" role="navigation" style="margin:20px">
                             <g:form resource="${this.annonce}" method="DELETE">
 
                                 <ul>
-                                    <li><g:link class="edit btn btn-primary" action="edit" resource="${this.annonce}"><g:message code="default.button.Modifier.label" default="Modifier" /></g:link>
+                                    <li><g:link class="edit bouton bouton-primary" action="edit" resource="${this.annonce}"><g:message code="default.button.Modifier.label" default="Modifier" /></g:link>
                                     </li>
-                                    <li> <input class="delete btn btn-primary" type="submit" value="${message(code: 'default.button.delete.label', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
+                                    <li> <input class="delete bouton bouton-primary" type="submit" value="${message(code: 'default.button.delete.label', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
                                     </li>
                                 </ul>
 

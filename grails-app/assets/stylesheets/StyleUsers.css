@@ -50,25 +50,25 @@ small {
     background-color: #fef0e9;
     box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.1);
 }
-.col-1 {
+.colonne-1 {
     flex-basis: 25%;
 }
-.col-2 {
+.colonne-2 {
     flex-basis: 25%;
 }
-.col-3 {
+.colonne-3 {
     flex-basis: 30%;
 }
-.col-4 {
+.colonne-4 {
     flex-basis: 30%;
 }
-.col-5 {
+.colonne-5 {
     flex-basis: 25%;
 }
-.col-6 {
+.colonne-6 {
     flex-basis: 25%;
 }
-*.col-7 {
+*.colonne-7 {
     flex-basis: 25%;
 
 }
@@ -139,12 +139,12 @@ div .nav{
     li {
         display: block;
     }
-    .col {
+    .colonne {
 
         flex-basis: 100%;
 
     }
-    .col {
+    .colonne {
         display: flex;
         padding: 10px 0;
     }
