@@ -66,8 +66,7 @@ class UserController {
             def userInstance=userService.save(user)
             if (params.deleteRole){
                 user.getAuthorities().each {
-                    def userRole = new Role(authority: it.authority).save()
-                    UserRole.remove(userInstance,userRole)
+                    UserRole.remove(userInstance,it)
                 }
             }
             if (params.addRole){

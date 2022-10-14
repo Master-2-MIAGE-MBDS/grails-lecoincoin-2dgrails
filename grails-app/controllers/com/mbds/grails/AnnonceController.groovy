@@ -13,7 +13,7 @@ class AnnonceController {
     UserService userService
 
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+   // static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 12, 100)

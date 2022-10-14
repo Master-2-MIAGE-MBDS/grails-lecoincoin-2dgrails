@@ -30,15 +30,15 @@
             </g:hasErrors>
             <g:form enctype='multipart/form-data' action="update" method="PUT" id="${user.id}">
                 <div class="form-row">
-                    <div class="name">Password</div>
-                    <div class="value">
-                        <g:field class="input--style" type="text" name="password" id="password" value="${user.password}"/>
-                    </div>
-                </div>
-                <div class="form-row">
                     <div class="name">Username</div>
                     <div class="value">
                         <g:field class="input--style" type="text" name="username" id="username" value="${user.username}"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Password</div>
+                    <div class="value">
+                        <g:field class="input--style" type="password" name="password" id="password" value="${user.password}"/>
                     </div>
                 </div>
                 <div class="form-row"> <div class="name">Rôle(s) Actuel(s)</div>
