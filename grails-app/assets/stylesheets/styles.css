@@ -149,11 +149,16 @@ a.create.bouton.bouton-primary {
 	color: #ff6e14;
 	background-color: #ffb69b;
 }
+.bouton-primary {
+	color: #ff6e14;
+	background-color: #ffb69b;
+}
 .search {
 	background-color: #ff6e14;
 	padding: 4px;
 	border-radius: 5px;
 }
+
 
 .search input {
 	height: 45px;
@@ -585,6 +590,7 @@ img.card-img-top {
 .bouton.bouton-primary:hover {
 	background-color: #ff6e14;
 }
+
 
 .container.px-4.px-lg-5.mt-5 {
 	margin: 0px;
