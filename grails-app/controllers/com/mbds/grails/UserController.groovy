@@ -8,6 +8,7 @@ import static org.springframework.http.HttpStatus.*
 class UserController {
 
     UserService userService
+    UserServService userServService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -36,7 +37,12 @@ class UserController {
 
         try {
             def userInstance = userService.save(user)
-            def userRole = new Role(authority: params.role).save()
+            def userRole
+            if (params.role=='Administrator'){
+                userRole = new Role(authority: "ROLE ADMIN" ).save()
+            }else {
+                userRole = new Role(authority: "ROLE ADVERTISER" ).save()
+            }
             UserRole.create(userInstance, userRole, true)
         } catch (ValidationException e) {
             respond user.errors, view:'create'
@@ -64,14 +70,13 @@ class UserController {
 
         try {
             def userInstance=userService.save(user)
+                def roleUser = new Role(authority: params.role).save()
+                UserRole.create(userInstance, roleUser, true)
+
             if (params.deleteRole){
                 user.getAuthorities().each {
                     UserRole.remove(userInstance,it)
                 }
-            }
-            if (params.addRole){
-                def userRole = new Role(authority: params.role).save()
-                UserRole.create(userInstance, userRole, true)
             }
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
@@ -112,5 +117,11 @@ class UserController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    def find(){
+        String toSearch=params.search
+        def users= userServService.searchUser(toSearch)
+        render view: "index", model: [userCount: users.size(),userList:users]
     }
 }

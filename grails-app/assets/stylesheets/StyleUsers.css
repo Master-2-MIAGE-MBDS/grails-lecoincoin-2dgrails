@@ -167,3 +167,7 @@ span.badge.danger {
 span.badge.admin {
     background: green;
 }
+
+input#search {
+    color: black;
+}

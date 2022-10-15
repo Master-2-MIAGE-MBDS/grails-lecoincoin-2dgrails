@@ -10,6 +10,14 @@
         <a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
+            <g:form action="find" controller="user" method="POST">
+                    <g:field type="search" name="search" placeholder="Rechercher"/>
+
+
+                    <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
+                                    value="Rechercher"/>
+
+            </g:form>
             <g:link class="btn create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>
         <div id="list-user" class="scaffold-list" role="main">
@@ -37,8 +45,8 @@
                         </g:if><g:else><span class="badge">Enabled</span></g:else></div>
                         <div class="colonne colonne-6" data-label="Payment Status">
                             <g:each var="role" in="${it.getAuthorities()}">
-                                <g:if test="${role.authority=="ROLE_ADMIN" || role.authority=="Administrator" }"><span class="badge admin">Administrator</span>
-                                </g:if><g:else><span class="badge">advertiser</span></g:else></g:each>
+                                <g:if test="${role.authority=="ROLE_ADMIN" || role.authority=="ROLE ADMIN"  }"><span class="badge admin">Administrator</span>
+                                </g:if><g:else><span class="badge">Advertiser</span></g:else></g:each>
                         </div>
                     <div class="colonne colonne-7">
                         <g:form resource="${it}" method="DELETE">

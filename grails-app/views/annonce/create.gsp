@@ -36,7 +36,7 @@
         <div class="content">
             <div class="px-4 px-lg-5 mt-5">
                 <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <g:form enctype='multipart/form-data' action="save" method="POST">
+                    <g:form enctype='multipart/form-data' action="save" controller="annonce" method="POST">
                         <div class="form-row">
                             <div class="name">Titre</div>
 
@@ -80,12 +80,14 @@
 
                             </div>
                         </div>
+                        <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE ADMIN">
                         <div class="form-row">
                             <div class="name">Auteur</div>
                             <div class="ckb">
                                 <g:select name="author" from="${this.userList}" id="author" optionKey="id" optionValue="username"/>
                             </div>
                         </div>
+                        </sec:ifAnyGranted>
 
                         <div class="card-footer">
                             <fieldset class="">

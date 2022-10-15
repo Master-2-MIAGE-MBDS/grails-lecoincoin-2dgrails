@@ -9,8 +9,10 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        //"/"(view:"/index")
+        "/" ( controller:'annonce', action:'index' )
         "500"(view:'/error')
         "404"(view:'/notFound')
+        "/admin/dashboard"(view: "/index")
     }
 }

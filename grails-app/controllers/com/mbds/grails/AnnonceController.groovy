@@ -1,19 +1,24 @@
 package com.mbds.grails
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.multipart.MultipartFile
 
 import static org.springframework.http.HttpStatus.*
 
-@Secured('ROLE_ADMIN')
+@Secured(['ROLE_ADMIN','ROLE_ADVERTISER'])
 class AnnonceController {
     AnnonceService AnnonceService
     AnnonceServService annonceServService
     UserService userService
+    @Autowired
+    SpringSecurityService springSecurityService
 
 
-   // static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    static allowedMethods = [save: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 12, 100)
@@ -36,6 +41,10 @@ class AnnonceController {
         }
 
         try {
+            if (params.author==null) {
+                def user = springSecurityService.getCurrentUser()
+                annonce.author=user
+            }
             List files=[]
             String name=annonce.title
             if (annonce.illustrations) {
@@ -80,6 +89,10 @@ class AnnonceController {
         }
 
         try {
+            if (params.author==null) {
+                def user = springSecurityService.getCurrentUser()
+                annonce.author=user
+            }
             List files=[]
             String name=annonce.title
             if (annonce.illustrations) {
@@ -132,7 +145,9 @@ class AnnonceController {
             '*'{ render status: NOT_FOUND }
         }
     }
-    def find(String search){
-
+    def find(){
+        String toSearch=params.search
+        def annonces= annonceServService.searchAnnonce(toSearch)
+        render view: "index", model: [annonceCount: annonces.size(),annonceList:annonces]
     }
 }

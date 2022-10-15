@@ -96,9 +96,10 @@
                         <p>${this.annonce.description}</p>
                         <p class="h3 py-2"><b>Auteur:</b>  ${this.annonce.author.username} </p>
                         <p class="h3 py-2"><b>Status:</b>
-                            <g:if test="${this.annonce.active}"> <span class="bouton bouton-success"> Annonce active </span></g:if>
-                            <g:else><span class="bouton bouton-danger"> Annonce inactive </span></g:else></p>
+                            <g:if test="${this.annonce.active}"> <span class="bouton btn-success"> Annonce active </span></g:if>
+                            <g:else><span class="bouton btn-danger"> Annonce inactive </span></g:else></p>
                         <p>
+<sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_ADVERTISER,ROLE ADMIN, ROLE ADVERTISER">
                         <div class="nav" role="navigation" style="margin:20px">
                             <g:form resource="${this.annonce}" method="DELETE">
 
@@ -110,6 +111,7 @@
                                 </ul>
 
                             </g:form> </div>
+</sec:ifAnyGranted>
                     </p>
                     </div>
                 </div>

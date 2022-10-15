@@ -11,7 +11,7 @@ class BootStrap {
     def init = { servletContext ->
         def adminUserInstance = new User(username: "admin",password: "admin").save()
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
-        def adviserRole = new Role(authority: "ROLE_ADVISER").save()
+        def adviserRole = new Role(authority: "ROLE_ADVERTISER").save()
         UserRole.create(adminUserInstance, adminRole, true)
 
         // On boucle sur une liste de 5 prénoms

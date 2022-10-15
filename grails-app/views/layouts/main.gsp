@@ -29,9 +29,15 @@ Commentaire --}%
 
         <ul>
 
-            <li><a href="/#"><i class="fas fa-user"></i>Dashboard<a></li>
+            <li><a href="${createLink(uri:'/admin/dashboard')}"><i class="fas fa-user"></i>Dashboard<a></li>
             <li><g:link controller="user" action="index"><i class="fas fa-address-card"></i>Utilisateurs</g:link></li>
             <li><g:link controller="annonce" action="index"><i class="fas fa-project-diagram"></i>Annonces</g:link></li>
+            <li><g:form controller="login">
+                <g:submitButton name="login" value="Login" />
+            </g:form></li>
+            <li><g:form controller="logout">
+                <g:submitButton name="logout" value="Logout" />
+            </g:form></li>
 
         </ul>
         <div class="social_media">
