@@ -5,7 +5,7 @@
     <title>Welcome to Grails</title>
 </head>
 <body>
-    <content tag="nav" id="content">
+    <content tag="nav">
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>

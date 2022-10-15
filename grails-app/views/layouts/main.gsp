@@ -127,16 +127,14 @@ Commentaire --}%
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-                <g:form controller="login" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <g:form controller="login" >
                     <g:submitButton name="login" value="Login" />
                 </g:form>
             </li>
 
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
-        <g:form controller="logout" class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <g:form controller="logout">
             <g:submitButton name="logout" value="Logout" />
         </g:form>
 
