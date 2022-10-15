@@ -22,50 +22,170 @@ Commentaire --}%
 </head>
 <body>
 <div class="wrapper">
-    <div class="side">
-        <h2> <a class="navbar-brand" href="/#">
-            <asset:image src="logo.png" alt="Grails Logo"/>
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+    <h2>  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <asset:image src="logo.png" alt="Grails Logo"/>
         </a></h2>
 
-        <ul>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
 
-            <li><a href="${createLink(uri:'/admin/dashboard')}"><i class="fas fa-user"></i>Dashboard<a></li>
-            <li><g:link controller="user" action="index"><i class="fas fa-address-card"></i>Utilisateurs</g:link></li>
-            <li><g:link controller="annonce" action="index"><i class="fas fa-project-diagram"></i>Annonces</g:link></li>
-            <li><g:form controller="login">
-                <g:submitButton name="login" value="Login" />
-            </g:form></li>
-            <li><g:form controller="logout">
-                <g:submitButton name="logout" value="Logout" />
-            </g:form></li>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="${createLink(uri:'/admin/dashboard')}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Interface
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+
+            <g:link controller="user" action="index" class="nav-link collapsed"
+               aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Utilisateurs</span>
+            </g:link>
+
+        </li>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+
+            <g:link controller="annonce" action="index" class="nav-link collapsed"
+               aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Annonces</span>
+            </g:link>
+        </li>
+
+        <!-- Divider -->
+
+
+    </ul>
+    <!-- End of Sidebar -->
+    <div class="d-flex flex-column" id="content-wrapper">
+    <!-- Topbar -->
+    <div id="content">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Topbar Search -->
+        <form
+                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                       aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                     aria-labelledby="searchDropdown">
+                    <form class="form-inline mr-auto w-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small"
+                                   placeholder="Search for..." aria-label="Search"
+                                   aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+                <g:form controller="login" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <g:submitButton name="login" value="Login" />
+                </g:form>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+        <g:form controller="logout" class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <g:submitButton name="logout" value="Logout" />
+        </g:form>
+
+                 </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                    <img class="img-profile rounded-circle"
+                         src="img/undraw_profile.svg">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                     aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Activity Log
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Logout
+                    </a>
+                </div>
+            </li>
 
         </ul>
-        <div class="social_media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-    <div class="main_content">
-        <div class="header navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="navbar-collapse collapse " aria-expanded="false" style="height: 0.8px;"
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
-        </div>
-        <div class="info">
+
+    </nav>
+    <!-- End of Topbar -->
+
+    <div class="info">
             <g:layoutBody/>
         </div>
 
     </div>
-
+</div>
 </div>
 
 
