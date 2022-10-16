@@ -45,10 +45,10 @@ small {
     flex-basis: 25%;
 }
 .colonne-3 {
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 .colonne-4 {
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 .colonne-5 {
     flex-basis: 25%;
@@ -57,7 +57,7 @@ small {
     flex-basis: 25%;
 }
 *.colonne-7 {
-    flex-basis: 25%;
+    flex-basis: 35%;
 
 }
 .icon{
@@ -181,7 +181,7 @@ a.create.bouton.bouton-primary {
 
 a.bouton.bouton-primary .fa {
     width: 34px;
-    height: 31px;
+    height: 37px;
     font-size: 24px;
     margin-top: auto;
 }
@@ -189,4 +189,34 @@ a.bouton.bouton-primary {
     display: inline-flex;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.bouton.bouton-primary {
+    display: inline-flex;
+}
+
+.bouton.bouton-primary i {
+    margin-top: auto;
+}
+.bouton {
+    display: inline-block;
+    line-height: 50px;
+    border-radius: 8px;
+    padding: 0 30px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #fff;
+    font-family: inherit;
+}
+input#Btnsearch {
+    width: 104px;
+}
+input#searchfield {
+    width: 230px;
 }

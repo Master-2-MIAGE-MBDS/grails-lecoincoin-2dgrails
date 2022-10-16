@@ -34,11 +34,11 @@
 <body>
 <div class="navAds" role="navigation">
     <ul>
-        <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message
+        <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><i class="fa fa-home fa-2x"></i><g:message
                 code="default.home.label"/></a></li>
-        <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label"
+        <li><g:link class="list bouton bouton-primary" action="index"><i class="fa fa-list fa-2x"></i><g:message code="default.list.label"
                                                                                  args="[entityName]"/></g:link></li>
-        <li><g:link class="create bouton bouton-primary" action="create"><g:message code="default.new.label"
+        <li><g:link class="create bouton bouton-primary" action="create"><i class="fa fa-bullhorn fa-2x"></i><g:message code="default.new.label"
                                                                                     args="[entityName]"/></g:link></li>
     </ul>
 </div>
@@ -99,18 +99,18 @@
                     <div class="card-body">
                         <h1 class="h2"><b>${this.annonce.title}</b></h1>
 
-                        <p class="h3 py-2"><b>Prix:</b>${this.annonce.price}€</p>
+                        <p class="h3 py-2"><b>Price:</b>${this.annonce.price}€</p>
 
                         <h2 class="h3 py-2"><b>Description:</b></h2>
 
                         <p>${this.annonce.description}</p>
 
-                        <p class="h3 py-2"><b>Auteur:</b>  ${this.annonce.author.username}</p>
+                        <p class="h3 py-2"><b>Author:</b>  ${this.annonce.author.username}</p>
 
                         <p class="h3 py-2"><b>Status:</b>
                             <g:if test="${this.annonce.active}"><span
-                                    class="bouton btn-success">Annonce active</span></g:if>
-                            <g:else><span class="bouton btn-danger">Annonce inactive</span></g:else></p>
+                                    class="bouton btn-success">Active ad</span></g:if>
+                            <g:else><span class="bouton btn-danger">Inactive ad</span></g:else></p>
                     <p>
                         <sec:ifAnyGranted roles="ROLE_ADVERTISER">
                             <g:if test="${this.annonce.author.username.toString()==sec.loggedInUserInfo(field: 'username').toString()}">
@@ -120,11 +120,11 @@
                                     <ul>
                                         <li><g:link class="edit bouton bouton-primary" action="edit"
                                                     resource="${this.annonce}"><g:message
-                                                    code="default.button.Modifier.label" default="Modifier"/></g:link>
+                                                    code="default.button.Modifier.label" default="Edit"/></g:link>
                                         </li>
                                         <li><input class="delete bouton bouton-primary" type="submit"
-                                                   value="${message(code: 'default.button.delete.label', default: 'Supprimer')}"
-                                                   onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');"/>
+                                                   value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                                                   onclick="return confirm('Are you sure you want to delete this ad?');"/>
                                         </li>
                                     </ul>
 
@@ -139,11 +139,11 @@
                                         <ul>
                                             <li><g:link class="edit bouton bouton-primary" action="edit"
                                                         resource="${this.annonce}"><g:message
-                                                        code="default.button.Modifier.label" default="Modifier"/></g:link>
+                                                        code="default.button.Modifier.label" default="Edit"/></g:link>
                                             </li>
                                             <li><input class="delete bouton bouton-primary" type="submit"
-                                                       value="${message(code: 'default.button.delete.label', default: 'Supprimer')}"
-                                                       onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');"/>
+                                                       value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                                                       onclick="return confirm('Are you sure you want to delete this ad?');"/>
                                             </li>
                                         </ul>
 
