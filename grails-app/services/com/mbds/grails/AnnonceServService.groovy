@@ -1,13 +1,34 @@
 package com.mbds.grails
 
 import grails.gorm.transactions.Transactional
+
+import java.lang.reflect.Array
+
 @Transactional
 class AnnonceServService {
 
-     def createAnnonce(data) {
-         Float prix=60.3
-       def an=new Annonce(title: 'datatitle2',description: 'data.description',price: prix,author: 1).save(flush:true)
-         return an
+     Annonce createAnnonce(data) {
+         Float prix=data.price
+         def user = User.findByUsername(data.author)
+         List files=[]
+         def date= new Date().format('yymmddhhmmss')
+
+         def encodedFiles=data.illustrations
+         encodedFiles.each{
+             file ->
+             String decodedFile =file.replaceAll("\r", "")
+                 decodedFile=decodedFile.replaceAll("\n", "")
+                 decodedFile=decodedFile.decodeBase64()
+                 def fileStore = new File(decodedFile+'.png')
+                 fileStore.createNewFile()
+                files.add(decodedFile+'.png')
+         }
+       def annonce=new Annonce(title: data.title,description: data.description,price: prix,active: data.active, author: user.id).save(flush:true)
+
+         files.each {
+             annonce.addToIllustrations(new Illustration(filename:it))
+         }
+         return annonce
     }
 
     List<Annonce> searchAnnonce(String search){

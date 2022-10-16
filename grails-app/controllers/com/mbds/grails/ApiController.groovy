@@ -58,8 +58,8 @@ class ApiController {
                 break;
             case "POST":
                def data= JSON.parse(request)
-                annonceServService.createAnnonce(data)
-                return response
+                def annonce=annonceServService.createAnnonce(data)
+                return annonce
                 break;
             default:
                 return response.status = 405
@@ -78,7 +78,6 @@ class ApiController {
             return response.status = 404
 
         switch (request.getMethod()) {
-
             case "GET":
                 renderThis(request.getHeader("Accept"), userInstance)
                 break;
