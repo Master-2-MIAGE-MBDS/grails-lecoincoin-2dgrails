@@ -29,19 +29,18 @@
         <div>
 
             <h1 class="heading">
-                Modifier l'annonce
             </h1>
         </div>
 
         <div class="content">
             <div class="px-4 px-lg-5 mt-5">
                 <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <g:form enctype='multipart/form-data' controller="annonce" action="update" method="POST">
+                    <g:form enctype='multipart/form-data' controller="annonce" action="update" method="POST" id="${this.annonce.id}">
                         <div class="form-row">
                             <div class="name">Titre</div>
 
                             <div class="value">
-                                <g:field value="${this.annonce.title}" class="input--style" type="text" name="title" id="title" placeholder="Titre de l'annonce"/>
+                                <g:field value="${this.annonce.title}" class="input--style" type="text" name="title" id="title" required="" placeholder="Titre de l'annonce"/>
                             </div>
                         </div>
 
@@ -49,7 +48,8 @@
                             <div class="name">Prix</div>
 
                             <div class="value">
-                                <g:field value="${this.annonce.price}" class="input--style" type="number" name="price" id="price" placeholder="Prix"/>
+                                <input value="${this.annonce.price}" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0.01" min="0.0" id="price">
+
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
                             <div class="name">Description</div>
 
                             <div class="value">
-                                <g:textArea value="${this.annonce.description}"  class="textarea--style" name="description" id="description"
+                                <g:textArea value="${this.annonce.description}"  class="textarea--style" name="description" required="" id="description"
                                             placeholder="Description de l'annonce "/>
 
                             </div>
@@ -73,6 +73,8 @@
                         <div class="form-row">
                             <div class="name">Changer les Illustrations</div>
 
+                            <span><b>Ajouter</b> <g:checkBox name="addIll" id="addIll" value="${FALSE}"/></span>
+                            <span><b>Supprimer tous</b> <g:checkBox name="deleteIll" id="deleteIll" value="${FALSE}"/></span>
                             <div class="ckb">
                                 <div class="js-input-file">
                                     <input class="input-file" type="file" name="illustrationFiles" id="illustrations" multiple accept="image/*">
@@ -130,7 +132,8 @@
                             </div>
                         </div>
 
-                        <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE ADMIN">
+
+                        <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE_ADVERTISER">
                         <div class="form-row">
                             <div class="name">Auteur</div>
                             <div class="ckb">

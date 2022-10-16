@@ -13,6 +13,6 @@ class UrlMappings {
         "/" ( controller:'annonce', action:'index' )
         "500"(view:'/error')
         "404"(view:'/notFound')
-        "/admin/dashboard"(view: "/index")
+        "/admin/dashboard"(view: "/Dashboard/dashboard")
     }
 }

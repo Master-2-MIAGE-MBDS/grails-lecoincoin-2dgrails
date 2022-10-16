@@ -39,9 +39,9 @@ class UserController {
             def userInstance = userService.save(user)
             def userRole
             if (params.role=='Administrator'){
-                userRole = new Role(authority: "ROLE ADMIN" ).save()
+                userRole = Role.findByAuthority('ROLE_ADMIN')
             }else {
-                userRole = new Role(authority: "ROLE ADVERTISER" ).save()
+                userRole = Role.findByAuthority('ROLE_ADVERTISER')
             }
             UserRole.create(userInstance, userRole, true)
         } catch (ValidationException e) {
@@ -70,14 +70,19 @@ class UserController {
 
         try {
             def userInstance=userService.save(user)
-                def roleUser = new Role(authority: params.role).save()
-                UserRole.create(userInstance, roleUser, true)
 
             if (params.deleteRole){
                 user.getAuthorities().each {
                     UserRole.remove(userInstance,it)
                 }
             }
+            def userRole
+            if (params.role=='Administrator'){
+                userRole = Role.findByAuthority('ROLE_ADMIN')
+            }else {
+                userRole = Role.findByAuthority('ROLE_ADVERTISER')
+            }
+                UserRole.create(userInstance, userRole, true)
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
             return

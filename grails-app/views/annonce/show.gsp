@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="main" />
-    <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}" />
-    <title><g:message code="default.show.label" args="[entityName]" /></title>
+    <meta name="layout" content="main"/>
+    <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}"/>
+    <title><g:message code="default.show.label" args="[entityName]"/></title>
 
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="styles.css"/>
@@ -22,20 +22,24 @@
     <asset:stylesheet rel="stylesheet" href="assets/css/custom.css"/>
 
     <!-- Load fonts style after rendering the layout styles -->
-    <asset:stylesheet rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"/>
+    <asset:stylesheet rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"/>
     <asset:stylesheet rel="stylesheet" href="assets/css/fontawesome.min.css"/>
 
     <!-- Slick -->
     <asset:stylesheet rel="stylesheet" type="text/css" href="assets/css/slick.min.css"/>
-    <asset:stylesheet  rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+    <asset:stylesheet rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
 </head>
 
 <body>
 <div class="nav" role="navigation">
     <ul>
-        <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-        <li><g:link class="create bouton bouton-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+        <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message
+                code="default.home.label"/></a></li>
+        <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label"
+                                                                                 args="[entityName]"/></g:link></li>
+        <li><g:link class="create bouton bouton-primary" action="create"><g:message code="default.new.label"
+                                                                                    args="[entityName]"/></g:link></li>
     </ul>
 </div>
 <section class="bg-light">
@@ -46,28 +50,31 @@
                     <section class="carousel" aria-label="Gallery">
                         <ol class="carousel__viewport">
                             <g:if test="${this.annonce.illustrations}">
-                                <g:each status="i" var="it" in="${this.annonce.illustrations}" >
+                                <g:each status="i" var="it" in="${this.annonce.illustrations}">
 
-                                    <li id="carousel__slide${i+1}"
+                                    <li id="carousel__slide${i + 1}"
                                         tabindex="0"
                                         class="carousel__slide">
-                                        <img class="card-img-top" src="${grailsApplication.config.illustrations.baseUrl+it.filename}"
+                                        <img class="card-img-top"
+                                             src="${grailsApplication.config.illustrations.baseUrl + it.filename}"
                                              alt="..."/>
+
                                         <div class="carousel__snapper">
                                             <g:if test="${this.annonce.illustrations[i]}">
                                                 <a href="#carousel__slide${i}"
                                                    class="carousel__prev">Image précédente</a>
                                             </g:if>
-                                            <g:if test="${this.annonce.illustrations[i+1]}">
-                                                <a href="#carousel__slide${i+2}"
+                                            <g:if test="${this.annonce.illustrations[i + 1]}">
+                                                <a href="#carousel__slide${i + 2}"
                                                    class="carousel__next">ImageSuivante</a>
                                             </g:if>
                                         </div>
                                     </li>
                                 </g:each>
                             </g:if>
-                            <g:else> <img class="card-img-top" src="${grailsApplication.config.illustrations.baseUrl+'soon.png'}"
-                                          alt="..."/></g:else>
+                            <g:else><img class="card-img-top"
+                                         src="${grailsApplication.config.illustrations.baseUrl + 'soon.png'}"
+                                         alt="..."/></g:else>
                         </ol>
 
                         <aside class="carousel__navigation">
@@ -75,7 +82,7 @@
                                 <g:each status="i" var="it" in="${this.annonce.illustrations}">
 
                                     <li class="carousel__navigation-item">
-                                        <a href="#carousel__slide${i+1}"
+                                        <a href="#carousel__slide${i + 1}"
                                            class="carousel__navigation-button">Voir la photo</a>
                                     </li>
 
@@ -91,27 +98,57 @@
                 <div class="cardads">
                     <div class="card-body">
                         <h1 class="h2"><b>${this.annonce.title}</b></h1>
-                        <p class="h3 py-2"><b>Prix: </b>${this.annonce.price}€</p>
+
+                        <p class="h3 py-2"><b>Prix:</b>${this.annonce.price}€</p>
+
                         <h2 class="h3 py-2"><b>Description:</b></h2>
+
                         <p>${this.annonce.description}</p>
-                        <p class="h3 py-2"><b>Auteur:</b>  ${this.annonce.author.username} </p>
+
+                        <p class="h3 py-2"><b>Auteur:</b>  ${this.annonce.author.username}</p>
+
                         <p class="h3 py-2"><b>Status:</b>
-                            <g:if test="${this.annonce.active}"> <span class="bouton btn-success"> Annonce active </span></g:if>
-                            <g:else><span class="bouton btn-danger"> Annonce inactive </span></g:else></p>
-                        <p>
-<sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_ADVERTISER,ROLE ADMIN, ROLE ADVERTISER">
-                        <div class="nav" role="navigation" style="margin:20px">
-                            <g:form resource="${this.annonce}" method="DELETE">
+                            <g:if test="${this.annonce.active}"><span
+                                    class="bouton btn-success">Annonce active</span></g:if>
+                            <g:else><span class="bouton btn-danger">Annonce inactive</span></g:else></p>
+                    <p>
+                        <sec:ifAnyGranted roles="ROLE_ADVERTISER">
+                            <g:if test="${this.annonce.author.username.toString()==sec.loggedInUserInfo(field: 'username').toString()}">
+                            <div class="nav" role="navigation" style="margin:20px">
+                                <g:form resource="${this.annonce}" method="DELETE">
 
-                                <ul>
-                                    <li><g:link class="edit bouton bouton-primary" action="edit" resource="${this.annonce}"><g:message code="default.button.Modifier.label" default="Modifier" /></g:link>
-                                    </li>
-                                    <li> <input class="delete bouton bouton-primary" type="submit" value="${message(code: 'default.button.delete.label', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
-                                    </li>
-                                </ul>
+                                    <ul>
+                                        <li><g:link class="edit bouton bouton-primary" action="edit"
+                                                    resource="${this.annonce}"><g:message
+                                                    code="default.button.Modifier.label" default="Modifier"/></g:link>
+                                        </li>
+                                        <li><input class="delete bouton bouton-primary" type="submit"
+                                                   value="${message(code: 'default.button.delete.label', default: 'Supprimer')}"
+                                                   onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');"/>
+                                        </li>
+                                    </ul>
 
-                            </g:form> </div>
-</sec:ifAnyGranted>
+                                </g:form></div>
+                            </g:if>
+                        </sec:ifAnyGranted>
+
+                        <sec:ifAnyGranted roles="ROLE_ADMIN">
+                                <div class="nav" role="navigation" style="margin:20px">
+                                    <g:form resource="${this.annonce}" method="DELETE">
+
+                                        <ul>
+                                            <li><g:link class="edit bouton bouton-primary" action="edit"
+                                                        resource="${this.annonce}"><g:message
+                                                        code="default.button.Modifier.label" default="Modifier"/></g:link>
+                                            </li>
+                                            <li><input class="delete bouton bouton-primary" type="submit"
+                                                       value="${message(code: 'default.button.delete.label', default: 'Supprimer')}"
+                                                       onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');"/>
+                                            </li>
+                                        </ul>
+
+                                    </g:form></div>
+                        </sec:ifAnyGranted>
                     </p>
                     </div>
                 </div>

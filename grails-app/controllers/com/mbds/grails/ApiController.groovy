@@ -8,6 +8,7 @@ import org.springframework.http.HttpMethod
 
 @Secured('ROLE_ADMIN')
 class ApiController {
+    AnnonceServService annonceServService
 
     /**
      * Singleton
@@ -27,12 +28,13 @@ class ApiController {
             case "GET":
                 renderThis(request.getHeader("Accept"), annonceInstance)
                 break;
-
             case "PUT":
                 break;
             case "PATCH":
                 break;
             case "DELETE":
+                annonceInstance.delete(flush:true)
+                return response.status
                 break;
             default:
                 return response.status = 405
@@ -54,7 +56,9 @@ class ApiController {
                 renderThis(request.getHeader("Accept"), annoncesInstance)
                 break;
             case "POST":
-
+               def data= JSON.parse(request)
+                annonceServService.createAnnonce(data)
+                return response
                 break;
             default:
                 return response.status = 405

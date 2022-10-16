@@ -18,7 +18,7 @@ class AnnonceController {
 
 
 
-    static allowedMethods = [save: "POST", delete: "DELETE"]
+    static allowedMethods = [save: "POST",update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 12, 100)
@@ -39,7 +39,6 @@ class AnnonceController {
             notFound()
             return
         }
-
         try {
             if (params.author==null) {
                 def user = springSecurityService.getCurrentUser()
@@ -77,11 +76,6 @@ class AnnonceController {
         respond userService.list(params)
         respond AnnonceService.get(id)
     }
-    def editan(Long id) {
-        respond userService.list(params)
-        respond userService.get(id)
-        respond AnnonceService.get(id)
-    }
     def update(Annonce annonce) {
         if (annonce == null) {
             notFound()
@@ -95,7 +89,15 @@ class AnnonceController {
             }
             List files=[]
             String name=annonce.title
-            if (annonce.illustrations) {
+            //Si l'utilisateur souhaite Supprimer les images existantes
+            def filesTodel=annonce.illustrations
+            if (params.deleteIll) {
+            filesTodel.each {
+                annonce.removeFromIllustrations(new Illustration(filename:  it))
+            }
+            }
+            //Si l'utilisateur souhaite ajouter des images à celles déjà existantes
+            if (params.addIll) {
                 request.getFiles("illustrationFiles").each { file ->
                 int indexpoint = file.filename.lastIndexOf(".");
                 String extName = file.filename.substring(indexpoint);

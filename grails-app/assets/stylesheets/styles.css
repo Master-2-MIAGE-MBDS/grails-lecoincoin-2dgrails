@@ -12,7 +12,7 @@ body {
 }
 
 .wrapper {
-	display:inline-flex;
+	display: table;
 	height: 100%;
 	width: 100%;
 }
@@ -159,7 +159,6 @@ a.create.bouton.bouton-primary {
 	border-radius: 5px;
 }
 
-
 .search input {
 	height: 45px;
 	border: none;
@@ -228,6 +227,27 @@ fieldset {
 		margin-top: 0;
 		margin-bottom: 12px;
 	}
+}
+.bouton {
+	display: inline-block;
+	line-height: 50px;
+	padding: 0 30px;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: capitalize;
+	font-weight: 700;
+	color: #fff;
+	font-family: inherit;
+}
+
+.bouton--radius {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 .bouton {
 	display: inline-block;
@@ -592,11 +612,18 @@ img.card-img-top {
 }
 
 
-.container.px-4.px-lg-5.mt-5 {
-	margin: 0px;
+.container {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-.card.row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3.row-cols-xl-4.justify-content-center {
-	padding: 0px;
-	margin: 0px;
+.navAds>ul {
+	display: flex;
+	justify-content: center;
+}
+.navAds>ul>li {
+	margin: 20px;
 }

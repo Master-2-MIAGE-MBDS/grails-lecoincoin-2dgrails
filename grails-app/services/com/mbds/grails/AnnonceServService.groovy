@@ -1,12 +1,13 @@
 package com.mbds.grails
 
 import grails.gorm.transactions.Transactional
-
 @Transactional
 class AnnonceServService {
 
-    def createAnnonce(annonce) {
-        new Annonce(title: annonce.title,description: annonce.description,price: annonce.price,active: annonce.active).save()
+     def createAnnonce(data) {
+         Float prix=60.3
+       def an=new Annonce(title: 'datatitle',description: 'data.description',price: prix).save(flush:true)
+         return an
     }
 
     List<Annonce> searchAnnonce(String search){

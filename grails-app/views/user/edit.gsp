@@ -44,16 +44,14 @@
                 <div class="form-row"> <div class="name">Rôle(s) Actuel(s)</div>
                     <div class="value">
                         <g:each var="role" in="${user.getAuthorities()}">
-                            <g:if test="${role.authority=="ROLE_ADMIN" || role.authority=="ROLE_ADMIN" }"><span class="badge admin">ROLE_ADMIN</span>
-                            </g:if><g:else><span class="badge">ROLE_ADVERTISER</span></g:else>
+                            <g:if test="${role.authority=="ROLE_ADMIN" }"><span class="badge admin">Administrator</span>
+                            </g:if><g:else><span class="badge">Advertiser</span></g:else>
                         </g:each>
+                       <span><b>Supprimer ce(s) rôle(s):</b> <g:checkBox name="deleteRole" id="deleteRole" value="${FALSE}"/></span>
                     </div>
-                    <div class="name">Supprimer ces rôles</div>
+                    <div class="name">Rôle</div>
                     <div class="value">
-                        <g:checkBox name="deleteRole" id="deleteRole" value="${FALSE}"/>
-                    </div><div class="name">Rôle</div>
-                    <div class="value">
-                        <g:select name="role" from="${['ROLE_ADMIN','ROLE_ADVERTISER']}"/>
+                        <g:select name="role" from="${['Administrator','Advertiser']}"/>
                     </div>
 
                 </div>

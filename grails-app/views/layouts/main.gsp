@@ -24,159 +24,75 @@ Commentaire --}%
 <body>
 <div class="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-brand navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <nav class="main-menu">
+    <div class="firstul">
+        <ul>
+            <li>
+                <a class="nav-link" href="${createLink(uri:'/admin/dashboard')}">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+                </a>
 
-        <!-- Sidebar - Brand -->
-    <h2>  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <asset:image src="logo.png" alt="Grails Logo"/>
-        </a></h2>
-
-        <!-- Divider -->
-        <hr class=" diviseur sidebar-divider my-0">
-
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="${createLink(uri:'/admin/dashboard')}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-               <b><span>Dashboard</span></b></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Interface
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-
-            <g:link controller="user" action="index" class="nav-link collapsed"
+            </li>
+            <li class="has-subnav">
+                <g:link controller="user" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-               <b> <span>Utilisateurs</span></b>
-            </g:link>
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                        Utilisateurs
+                    </span>
+                </g:link>
 
-        </li>
+            </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-
-            <g:link controller="annonce" action="index" class="nav-link collapsed"
+            <li class="has-subnav">
+                <g:link controller="annonce" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <b> <span>Annonces</span></b>
-            </g:link>
-        </li>
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                        Annonces
+                    </span>
+                </g:link>
 
-        <!-- Divider -->
-
-
-    </ul>
-    <!-- End of Sidebar -->
-    <div class="d-flex flex-column" id="content-wrapper">
-    <!-- Topbar -->
-
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-        <!-- Sidebar Toggle (Topbar) -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-        </button>
-
-        <!-- Topbar Search -->
-        <form
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                       aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-search fa-fw"></i>
-                </a>
-                <!-- Dropdown - Messages -->
-                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                     aria-labelledby="searchDropdown">
-                    <form class="form-inline mr-auto w-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                   placeholder="Search for..." aria-label="Search"
-                                   aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-                <g:form controller="login" >
-                    <g:submitButton name="login" value="Login" />
-                </g:form>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-        <g:form controller="logout">
-            <g:submitButton name="logout" value="Logout" />
-        </g:form>
-
-                 </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                    <img class="img-profile rounded-circle"
-                         src="img/undraw_profile.svg">
-                </a>
-                <!-- Dropdown - User Information -->
-                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                     aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Profile
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Activity Log
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
-                    </a>
-                </div>
-            </li>
-
+            
         </ul>
-
+</div>
+        <ul class="logout">
+            <li>
+                <a href="#">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>
+        </ul>
     </nav>
+
+    <header class="header">
+        <div class="nav">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <asset:image src="logo.png" alt="Grails Logo"/>
+            </a>
+            <div class="auth">
+                <ul>
+                    <sec:ifNotLoggedIn><li><g:form controller="login">
+                    <g:submitButton class="create bouton bouton-primary" name="login" value="Se connecter" />
+                </g:form></li></sec:ifNotLoggedIn>
+
+                    <sec:ifLoggedIn><li>  <h2>Bienvenue <b>${sec.loggedInUserInfo(field: 'username')}</b></h2></li>
+                        <li><g:form controller="logout">
+                            <g:submitButton class="create bouton bouton-primary" name="logout" value="Se déconnecter"/>
+                        </g:form></li>
+                    </sec:ifLoggedIn>
+
+</ul>
+            </div>
+</div>
+    </header>
     <!-- End of Topbar -->
 
     <div class="info">
