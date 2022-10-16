@@ -9,6 +9,7 @@ import org.springframework.http.HttpMethod
 @Secured('ROLE_ADMIN')
 class ApiController {
     AnnonceServService annonceServService
+    UserServService userServService
 
     /**
      * Singleton
@@ -106,6 +107,9 @@ class ApiController {
                 break;
             case "POST":
                 def data= JSON.parse(request)
+
+                userServService.createUser(data)
+
                 return response
                 break;
             default:
