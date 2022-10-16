@@ -48,7 +48,7 @@
                             <div class="name">Price</div>
 
                             <div class="value">
-                                <input value="${this.annonce.price}" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0.01" min="0.0" id="price">
+                                <input value="${this.annonce.price}" lang="EN" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0,01" min="0,0" id="price"/>
 
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                         <div class="card-footer">
                             <fieldset class="">
                                 <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                                value="Edit"/>
+                                                value="Update"/>
                             </fieldset>
                         </div>
                     </g:form>
