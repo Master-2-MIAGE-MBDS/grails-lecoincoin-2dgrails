@@ -160,9 +160,14 @@ a.create.bouton.bouton-primary {
 }
 
 .auth {
-    margin-left: auto;
-    margin-top: auto;
     margin-bottom: auto;
+    margin-top: auto;
+}
+h1.welcome.align-items-center.justify-content-center {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 40px;
 }
 
 i.fa.fa-minus-circle.fa-2x {

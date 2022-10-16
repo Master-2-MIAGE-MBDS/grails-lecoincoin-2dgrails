@@ -11,11 +11,11 @@
         <div class="nav" role="navigation">
             <a class="bouton bouton-primary" href="${createLink(uri: '/')}"><i class="fa fa-home fa-2x"></i>Home</a>
             <g:form action="find" controller="user" method="POST">
-                    <g:field type="search" name="search" placeholder="Rechercher"/>
+                    <g:field type="search" name="search" placeholder="Search user" id="searchfield"/>
 
 
-                    <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                    value="Rechercher"/>
+                    <g:submitButton name="Btnsearch" class="save bouton bouton--radius-2 bouton-primary"
+                                    value="Search"/>
 
             </g:form>
             <g:link class="bouton bouton-primary" action="create"><i class="fa fa-user fa-2x"></i>New user</g:link>
@@ -31,8 +31,8 @@
                     <div class="colonne colonne-3">Password Expired</div>
                     <div class="colonne colonne-4">Account Expired </div>
                     <div class="colonne colonne-5">Enabled </div>
-                    <div class="colonne colonne-6">Rôle</div>
-                    <div class="colonne colonne-7">Actions</div>
+                    <div class="colonne colonne-6">Role</div>
+                    <div class="colonne colonne-7">Action</div>
                 </li>
                 <g:each in="${userList}">
                     <li class="table-row">
@@ -49,16 +49,9 @@
                                 </g:if><g:else><span class="badge">Advertiser</span></g:else></g:each>
                         </div>
                     <div class="colonne colonne-7">
-
-                                <g:form resource="${it}" method="DELETE">
-                                    <p class="icon">
-
-                                        <g:link class=" edit"  action="edit" id="${it.id}"><i class="fa fa-edit fa-2x"></i></g:link>
-                                        <a type="submit" method="DELETE" href="${createLink(controller: 'user',method:'DELETE', action: 'delete', id: it.id)}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce?');" class="button delete-button"><i class="fa fa-minus-circle fa-2x"> </i></a>
-%{--                                         <input class="delete iconDelete" type="submit" value="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />--}%
-
-                                    </p>
-                                </g:form>
+                        <g:link class="create bouton bouton-primary" action="show" id="${it.id}">
+                            Click to see more
+                        </g:link>
 
 
                     </div>

@@ -21,7 +21,7 @@
             </div>
                 <div>
                 <h1 class="heading">
-                    Display user ${this.user.username}
+                    Informations of ${this.user.username}
                 </h1>
                 </div>
 
@@ -32,6 +32,16 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:form enctype='multipart/form-data'>
+                <div class="card-footer">
+                    <sec:ifAnyGranted roles="ROLE_ADMIN">
+                        <div class="navAds show" role="navigation" style="margin:20px">
+                            <g:form resource="${this.user}" method="DELETE">
+                                <g:link class=" bouton bouton-primary" action="edit" resource="${this.user}"><g:message code="default.button.Modifier.label" default="Edit" /></g:link>
+                                <input class=" bouton bouton-primary" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
+
+                            </g:form> </div>
+                    </sec:ifAnyGranted>
+                </div>
                 <div class="form-row">
                     <div class="name"><b class="h3">Username :</b></div>
                     <div class="value">${this.user.username}
@@ -127,16 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <sec:ifAnyGranted roles="ROLE_ADMIN">
-                        <div class="navAds show" role="navigation" style="margin:20px">
-                            <g:form resource="${this.user}" method="DELETE">
-                                    <g:link class=" bouton bouton-primary" action="edit" resource="${this.user}"><g:message code="default.button.Modifier.label" default="Modifier" /></g:link>
-                                     <input class=" bouton bouton-primary" type="submit" value="${message(code: 'default.button.delete.label', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
 
-                            </g:form> </div>
-                    </sec:ifAnyGranted>
-                </div>
             </g:form>
 
             </div>

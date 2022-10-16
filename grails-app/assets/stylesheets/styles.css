@@ -641,7 +641,7 @@ span.badge.danger {
 span.badge.admin {
 	background: green;
 }
-input.bouton.bouton-primary {
+.card-footer input.bouton.bouton-primary{
 	max-width: 124px;
 }
 

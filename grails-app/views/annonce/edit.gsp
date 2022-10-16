@@ -22,8 +22,8 @@
     <div class="container-fostrap card">
         <div class="navAds" role="navigation">
             <ul>
-                <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><i class="fa fa-home fa-2x"></i><g:message code="default.home.label"/></a></li>
+                <li><g:link class="list bouton bouton-primary" action="index"><i class="fa fa-list fa-2x"></i><g:message code="default.list.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
         <div>
@@ -37,7 +37,7 @@
                 <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <g:form enctype='multipart/form-data' controller="annonce" action="update" method="POST" id="${this.annonce.id}">
                         <div class="form-row">
-                            <div class="name">Titre</div>
+                            <div class="name">Title</div>
 
                             <div class="value">
                                 <g:field value="${this.annonce.title}" class="input--style" type="text" name="title" id="title" required="" placeholder="Titre de l'annonce"/>
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="name">Prix</div>
+                            <div class="name">Price</div>
 
                             <div class="value">
                                 <input value="${this.annonce.price}" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0.01" min="0.0" id="price">
@@ -71,10 +71,10 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="name">Changer les Illustrations</div>
+                            <div class="name">Change illustrations</div>
 
-                            <span><b>Ajouter</b> <g:checkBox name="addIll" id="addIll" value="${FALSE}"/></span>
-                            <span><b>Supprimer tous</b> <g:checkBox name="deleteIll" id="deleteIll" value="${FALSE}"/></span>
+                            <span><b>Add</b> <g:checkBox name="addIll" id="addIll" value="${FALSE}"/></span>
+                            <span><b>Delete All</b> <g:checkBox name="deleteIll" id="deleteIll" value="${FALSE}"/></span>
                             <div class="ckb">
                                 <div class="js-input-file">
                                     <input class="input-file" type="file" name="illustrationFiles" id="illustrations" multiple accept="image/*">
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                             <div class="name ">Illustrations actuellement enregistrés</div>
+                             <div class="name ">Illustrations currently registered</div>
                             <div class="value">
                                 <div class="cardads mb-3">
                                     <section class="carousel" aria-label="Gallery">
@@ -135,7 +135,7 @@
 
                         <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE_ADVERTISER">
                         <div class="form-row">
-                            <div class="name">Auteur</div>
+                            <div class="name">Author</div>
                             <div class="ckb">
                                 <g:select name="author" from="${this.userList}" id="author" optionKey="id" optionValue="username" value="${this.annonce.author.id}"/>
                             </div>
@@ -144,7 +144,7 @@
                         <div class="card-footer">
                             <fieldset class="">
                                 <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                                value="Modifier l'annonce"/>
+                                                value="Edit"/>
                             </fieldset>
                         </div>
                     </g:form>

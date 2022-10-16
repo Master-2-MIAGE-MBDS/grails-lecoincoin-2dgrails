@@ -29,20 +29,20 @@
                         <g:field type="search" name="search" placeholder="Rechercher"/>
                     </div>
 
-                    <div class="search col-md-4">
+                    <div class=" col-md-4">
                         <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                        value="Rechercher"/>
+                                        value="Search"/>
                     </div>
                 </g:form>
                 </div>
                 <div class="col-md-6"><g:link class="create bouton bouton-primary" action="create">
-                    <i class="fa fa-bullhorn fa-2x"></i> Nouvelle annonce
+                    <i class="fa fa-bullhorn fa-2x"></i> New ad
                 </g:link></div>
 
             </div>
 
             <h1 class="heading">
-                Liste des Annonces
+                List of Ads
             </h1>
         </div>
 
@@ -79,7 +79,7 @@
 
                                 <div class="card-read-more">
                                     <g:link class="show bouton bouton-link bouton-block" action="show"
-                                            id="${it.id}">Voir plus
+                                            id="${it.id}">More
                                     </g:link>
                                 </div>
                             </div>
