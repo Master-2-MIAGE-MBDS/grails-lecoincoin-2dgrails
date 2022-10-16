@@ -62,6 +62,7 @@ Commentaire --}%
 </div>
         <ul class="logout">
             <li>
+
                 <a href="#">
                     <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">
@@ -83,7 +84,7 @@ Commentaire --}%
                     <g:submitButton class="create bouton bouton-primary" name="login" value="Se connecter" />
                 </g:form></li></sec:ifNotLoggedIn>
 
-                    <sec:ifLoggedIn><li>  <h2>Bienvenue <b>${sec.loggedInUserInfo(field: 'username')}</b></h2></li>
+                    <sec:ifLoggedIn><li>  <h2 class="align-items-center justify-content-center">Bienvenue <b>${sec.loggedInUserInfo(field: 'username')}</b></h2></li>
                         <li><g:form controller="logout">
                             <g:submitButton class="create bouton bouton-primary" name="logout" value="Se déconnecter"/>
                         </g:form></li>
