@@ -36,7 +36,7 @@
                 </g:form>
                 </div>
                 <div class="col-md-6"><g:link class="create bouton bouton-primary" action="create">
-                    + Nouvelle annonce
+                    <i class="fa fa-bullhorn fa-2x"></i> Nouvelle annonce
                 </g:link></div>
 
             </div>

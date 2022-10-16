@@ -2,9 +2,18 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <asset:stylesheet src="Styles.css"/>
+        <asset:stylesheet src="application.css"/>
+        <asset:stylesheet src="styles.css"/>
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/fav.ico"/>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     </head>
     <body>
     <section class="wrapper py-5">
@@ -16,14 +25,15 @@
                 </ul>
             </div>
             <div>
-
                 <h1 class="heading">
-                    Ajouter un nouveau utilisateur
+                    Add new user
                 </h1>
             </div>
 
-        <div id="create-user" class="content scaffold-create" role="main">
-            <g:if test="${flash.message}">
+        <div class="content" id="create-user" role="main">
+            <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${this.user}">
@@ -80,14 +90,14 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <fieldset class="buttons">
-                        <g:submitButton name="create" class="save btn btn--radius-2 btn-primary"
+                    <fieldset class="">
+                        <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
                                         value="${message(code: 'default.button.create.label', default: 'Create')}" />
                     </fieldset>
                 </div>
             </g:form>
-        </div>
             </div>
+        </div>
         </div>
     </section>
     </body>

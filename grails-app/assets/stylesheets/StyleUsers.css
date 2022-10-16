@@ -159,3 +159,34 @@ span.badge.admin {
 input#search {
     color: black;
 }
+
+a.create.bouton.bouton-primary {
+    text-decoration: none;
+}
+.bouton-primary {
+    color: #ff6e14;
+    background-color: #ffb69b;
+}
+.bouton-primary {
+    color: #ff6e14;
+    background-color: #ffb69b;
+}
+.bouton-primary:hover {
+    color: #fff;
+    background-color: #ff6e14;
+}
+.bouton.bouton-primary:hover {
+    background-color: #ff6e14;
+}
+
+a.bouton.bouton-primary .fa {
+    width: 34px;
+    height: 31px;
+    font-size: 24px;
+    margin-top: auto;
+}
+a.bouton.bouton-primary {
+    display: inline-flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}

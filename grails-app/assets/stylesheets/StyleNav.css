@@ -165,4 +165,15 @@ a.create.bouton.bouton-primary {
     margin-bottom: auto;
 }
 
+i.fa.fa-minus-circle.fa-2x {
+    color: red;
+}
 
+i.fa.fa-edit.fa-2x {
+    color: #ff6e14;
+}
+
+p.icon a:hover {
+    text-decoration: none;
+    background-color: #ffb69b;
+}

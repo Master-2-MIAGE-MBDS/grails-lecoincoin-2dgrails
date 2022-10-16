@@ -17,6 +17,11 @@ class Role implements Serializable {
 		authority nullable: false, blank: false, unique: true
 	}
 
+	static boolean remove(User user, Role role, boolean flush = false) {
+		UserRole userRole = UserRole.findByUserAndRole(user, role)
+		return userRole ? userRole.delete(flush: flush) : false
+	}
+
 	static mapping = {
 		cache true
 	}

@@ -9,7 +9,7 @@
     <body>
         <a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
-            <a class="btn home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
+            <a class="bouton bouton-primary" href="${createLink(uri: '/')}"><i class="fa fa-home fa-2x"></i>Home</a>
             <g:form action="find" controller="user" method="POST">
                     <g:field type="search" name="search" placeholder="Rechercher"/>
 
@@ -18,7 +18,7 @@
                                     value="Rechercher"/>
 
             </g:form>
-            <g:link class="btn create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+            <g:link class="bouton bouton-primary" action="create"><i class="fa fa-user fa-2x"></i>New user</g:link>
         </div>
         <div id="list-user" class="scaffold-list" role="main">
             <g:if test="${flash.message}">
@@ -49,19 +49,17 @@
                                 </g:if><g:else><span class="badge">Advertiser</span></g:else></g:each>
                         </div>
                     <div class="colonne colonne-7">
-                        <sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_ADVERTISER,ROLE ADMIN, ROLE ADVERTISER">
 
                                 <g:form resource="${it}" method="DELETE">
                                     <p class="icon">
 
-                                        <g:link class="iconView edit"  action="edit" id="${it.id}"></g:link>
-
-                                         <input class="delete iconDelete" type="submit" value="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
+                                        <g:link class=" edit"  action="edit" id="${it.id}"><i class="fa fa-edit fa-2x"></i></g:link>
+                                        <a type="submit" method="DELETE" href="${createLink(controller: 'user',method:'DELETE', action: 'delete', id: it.id)}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce?');" class="button delete-button"><i class="fa fa-minus-circle fa-2x"> </i></a>
+%{--                                         <input class="delete iconDelete" type="submit" value="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />--}%
 
                                     </p>
                                 </g:form>
 
-                        </sec:ifAnyGranted>
 
                     </div>
                 </g:each>

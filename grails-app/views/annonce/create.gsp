@@ -34,7 +34,6 @@
         </div>
 
         <div class="content">
-            <div class="">
                 <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <g:form  enctype='multipart/form-data' controller="annonce" action="save" method="POST">
                         <div class="form-row">
@@ -92,12 +91,11 @@
                         <div class="card-footer">
                             <fieldset class="">
                                 <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                                value="Créer l'annonce"/>
+                                                value="Create Ads"/>
                             </fieldset>
                         </div>
                     </g:form>
                 </div>
-            </div>
         </div>
     </div>
 </section>

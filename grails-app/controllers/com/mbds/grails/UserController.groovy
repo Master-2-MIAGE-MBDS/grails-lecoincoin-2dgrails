@@ -10,7 +10,7 @@ class UserController {
     UserService userService
     UserServService userServService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -104,14 +104,18 @@ class UserController {
             return
         }
 
-        user= User.findById(id)
-        //userRole = Role.findAllByAuthority
+        def userRoles= User.findById(id).getAuthorities()
+        def user= User.findById(id)
+
+        userRoles.each {
+            Role.remove(user,it,true)
+        }
         userService.delete(id)
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'user.label', default: 'User'), id])
-                redirect action:"index", method:"GET"
+                redirect action:"index", method:"GET", controller:'annonce'
             }
             '*'{ render status: NO_CONTENT }
         }
