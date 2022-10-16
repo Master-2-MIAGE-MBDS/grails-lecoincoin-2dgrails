@@ -177,7 +177,7 @@
 
 <div id="login">
 
-    
+
         <div class="login-page">
 
             <div class="form">
@@ -205,9 +205,10 @@
             </p>
 
             <p>
-                <input type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
+                <input class="bouton bouton-primary" type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
             </p>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Not registered?<g:link class="create" action="create">Create an account</g:link>
+        </p>
         </form>
     </div>
         </div>
