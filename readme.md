@@ -55,8 +55,19 @@ Les différentes fonctionnalités réalisées sont :
 - Un utilisateur peut se déconnecter
 ### API rest
 - l'adresse spécifique des APIs : 
-  1. **Get annonce by id** : http://localhost:8081/api/annonce/1
-  2. **Get annonces** :
+- **Annonces**
+  1. **Get annonce by id**: http://localhost:8081/api/annonce/1
+  2. **Get annonces**     : http://localhost:8081/api/annonces
+  3. **Post add annonces**:  http://localhost:8081/api/annonces
+  4. **Put update annonces** : http://localhost:8081/api/annonces
+  5. **Del annonces**     : http://localhost:8081/api/annonce/1
+- **Utilisateurs**
+  1. **Get user by id**   : http://localhost:8081/api/user/1
+  2. **Get Users**        : http://localhost:8081/api/users
+  3. **Post add users**   :  http://localhost:8081/api/users
+  4. **Put update users** : http://localhost:8081/api/users
+  5. **Del delete users** : http://localhost:8081/api/user/1
+  
 - L'API renvoie du JSON ou du XML en fonction des paramètres d’appel (header Accept)
 - L’API prend en charge les méthodes GET et DELETE sur les entités représentant les **utilisateurs** ainsi que les **annonces** (ressource individuelle ou collection)
 
