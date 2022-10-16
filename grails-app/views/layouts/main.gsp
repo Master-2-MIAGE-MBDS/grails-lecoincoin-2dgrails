@@ -13,6 +13,7 @@
     <asset:stylesheet src="bootstrap.css"/>
     <asset:stylesheet src="styleNav.css"/>
     <asset:stylesheet src="sb-admin-2.min.css"/>
+    <asset:stylesheet src="main.css"/>
 
 
 
@@ -23,7 +24,7 @@ Commentaire --}%
 <body>
 <div class="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-brand navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
     <h2>  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -31,13 +32,13 @@ Commentaire --}%
         </a></h2>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <hr class=" diviseur sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <a class="nav-link" href="${createLink(uri:'/admin/dashboard')}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+               <b><span>Dashboard</span></b></a>
         </li>
 
         <!-- Divider -->
@@ -54,7 +55,7 @@ Commentaire --}%
             <g:link controller="user" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Utilisateurs</span>
+               <b> <span>Utilisateurs</span></b>
             </g:link>
 
         </li>
@@ -65,7 +66,7 @@ Commentaire --}%
             <g:link controller="annonce" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Annonces</span>
+                <b> <span>Annonces</span></b>
             </g:link>
         </li>
 
@@ -76,7 +77,7 @@ Commentaire --}%
     <!-- End of Sidebar -->
     <div class="d-flex flex-column" id="content-wrapper">
     <!-- Topbar -->
-    <div id="content">
+
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
         <!-- Sidebar Toggle (Topbar) -->
@@ -183,7 +184,7 @@ Commentaire --}%
         </div>
 
     </div>
-</div>
+
 </div>
 
 
