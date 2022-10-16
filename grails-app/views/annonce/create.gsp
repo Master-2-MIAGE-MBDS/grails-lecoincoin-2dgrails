@@ -48,7 +48,7 @@
                             <div class="name">Price</div>
 
                             <div class="value">
-                                <input class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" value="" required="" step="0.01" min="0.0" id="price">
+                                <input pattern="[0-9]+([,][0-9]{1,2})?" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" value="" required="" step="0.01" min="0.0" id="price">
                             </div>
                         </div>
 

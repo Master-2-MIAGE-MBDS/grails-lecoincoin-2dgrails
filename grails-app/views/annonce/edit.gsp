@@ -48,7 +48,7 @@
                             <div class="name">Price</div>
 
                             <div class="value">
-                                <input value="${this.annonce.price}" lang="EN" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0,01" min="0,0" id="price"/>
+                                <input value="${this.annonce.price.toString().replace('.',',')}" lang="FR" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" required="" step="0,01" min="0,0" id="price"/>
 
                             </div>
                         </div>
