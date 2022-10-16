@@ -18,7 +18,7 @@ class AnnonceController {
 
 
 
-    static allowedMethods = [save: "POST",update: "POST", delete: "DELETE"]
+    static allowedMethods = [save: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 12, 100)
@@ -44,16 +44,16 @@ class AnnonceController {
                 def user = springSecurityService.getCurrentUser()
                 annonce.author=user
             }
+            def date= new Date().format('yymmddhhmmss')
+            def il=params.illustrationFiles
+            def test=il.getClass()
             List files=[]
-            String name=annonce.title
-            if (annonce.illustrations) {
-            request.getFiles("illustrationFiles").each { file ->
+                request.getFiles("illustrationFiles").each { file ->
                     int indexpoint = file.filename.lastIndexOf(".");
-                    String extName = file.filename.substring(indexpoint);
-
-                file.transferTo(new File(grailsApplication.config.illustrations.basePath+name+file.filename+extName))
-                files.add(name+file.filename+extName)
-            }}
+                    if (indexpoint>-1){
+                    file.transferTo(new File(grailsApplication.config.illustrations.basePath+date+file.filename))
+                    files.add(date+file.filename)}
+                }
             files.each {
                 annonce.addToIllustrations(new Illustration(filename:it))
             }
@@ -88,7 +88,7 @@ class AnnonceController {
                 annonce.author=user
             }
             List files=[]
-            String name=annonce.title
+            def date= new Date().format('yymmddhhmmss')
             //Si l'utilisateur souhaite Supprimer les images existantes
             def filesTodel=annonce.illustrations
             if (params.deleteIll) {
@@ -99,11 +99,8 @@ class AnnonceController {
             //Si l'utilisateur souhaite ajouter des images à celles déjà existantes
             if (params.addIll) {
                 request.getFiles("illustrationFiles").each { file ->
-                int indexpoint = file.filename.lastIndexOf(".");
-                String extName = file.filename.substring(indexpoint);
-
-                file.transferTo(new File(grailsApplication.config.illustrations.basePath+name+file.filename+extName))
-                files.add(name+file.filename+extName)
+                file.transferTo(new File(grailsApplication.config.illustrations.basePath+date+file.filename))
+                files.add(date+file.filename)
             }}
             files.each {
                 annonce.addToIllustrations(new Illustration(filename:it))

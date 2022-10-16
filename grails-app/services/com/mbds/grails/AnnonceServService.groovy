@@ -6,7 +6,7 @@ class AnnonceServService {
 
      def createAnnonce(data) {
          Float prix=60.3
-       def an=new Annonce(title: 'datatitle',description: 'data.description',price: prix).save(flush:true)
+       def an=new Annonce(title: 'datatitle2',description: 'data.description',price: prix,author: 1).save(flush:true)
          return an
     }
 

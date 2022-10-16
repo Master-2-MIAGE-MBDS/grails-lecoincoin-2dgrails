@@ -40,7 +40,7 @@ class UserController {
             def userRole
             if (params.role=='Administrator'){
                 userRole = Role.findByAuthority('ROLE_ADMIN')
-            }else {
+            }else if(params.role=='Advertiser'){
                 userRole = Role.findByAuthority('ROLE_ADVERTISER')
             }
             UserRole.create(userInstance, userRole, true)
@@ -79,10 +79,11 @@ class UserController {
             def userRole
             if (params.role=='Administrator'){
                 userRole = Role.findByAuthority('ROLE_ADMIN')
-            }else {
-                userRole = Role.findByAuthority('ROLE_ADVERTISER')
-            }
                 UserRole.create(userInstance, userRole, true)
+            }else if(params.role=='Advertiser'){
+                userRole = Role.findByAuthority('ROLE_ADVERTISER')
+                UserRole.create(userInstance, userRole, true)
+            }
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
             return
@@ -103,6 +104,8 @@ class UserController {
             return
         }
 
+        user= User.findById(id)
+        //userRole = Role.findAllByAuthority
         userService.delete(id)
 
         request.withFormat {

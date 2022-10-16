@@ -51,7 +51,7 @@
                 <div class="form-row">
                     <div class="name">Rôle</div>
                     <div class="value">
-                        <g:select name="role" from="${['Administrator','Advertiser']}"/>
+                        <g:select name="role" from="${['Aucun','Administrator','Advertiser']}"/>
                     </div>
                 </div>
                 <div class="form-row">

@@ -36,12 +36,12 @@
         <div class="content">
             <div class="">
                 <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <g:form enctype='multipart/form-data' action="save" controller="annonce" method="POST">
+                    <g:form  enctype='multipart/form-data' controller="annonce" action="save" method="POST">
                         <div class="form-row">
                             <div class="name">Titre</div>
 
                             <div class="value">
-                                <g:field class="input--style" type="text" name="title" id="title" placeholder="Titre de l'annonce" required=""/>
+                                <g:field minlength="5" class="input--style" type="text" name="title" id="title" placeholder="Titre de l'annonce" required=""/>
                             </div>
                         </div>
 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="name">Illustration</div>
+                            <div class="name">Illustrations</div>
 
                             <div class="ckb">
                                 <div class="js-input-file">

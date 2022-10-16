@@ -59,7 +59,7 @@
                     </div>
                     <div class="name">Rôle</div>
                     <div class="value">
-                        <g:select name="role" from="${['Administrator','Advertiser']}"/>
+                        <g:select name="role" from="${['Aucun','Administrator','Advertiser']}"/>
                     </div>
 
                 </div>

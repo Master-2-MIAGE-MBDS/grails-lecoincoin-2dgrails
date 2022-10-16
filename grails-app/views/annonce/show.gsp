@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<div class="nav" role="navigation">
+<div class="navAds" role="navigation">
     <ul>
         <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message
                 code="default.home.label"/></a></li>

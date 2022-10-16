@@ -24,10 +24,9 @@
     <asset:stylesheet src="styles.css"/>
 </head>
 
-<body>
-<h1>Dashboard</h1>
 <section class="wrapper py-5">
     <div class="container-fostrap card">
+<h1>Dashboard</h1>
         <div class="row justify-content-center">
 
             <!-- Earnings (Monthly) Card Example -->

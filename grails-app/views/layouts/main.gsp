@@ -39,7 +39,7 @@ Commentaire --}%
             <li class="has-subnav">
                 <g:link controller="user" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fa fa-laptop fa-2x"></i>
+                    <i class="fa fa-user fa-2x"></i>
                     <span class="nav-text">
                         Utilisateurs
                     </span>
@@ -50,7 +50,7 @@ Commentaire --}%
             <li class="has-subnav">
                 <g:link controller="annonce" action="index" class="nav-link collapsed"
                aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-folder-open fa-2x"></i>
+                    <i class="fa fa-bullhorn fa-2x"></i>
                     <span class="nav-text">
                         Annonces
                     </span>
@@ -66,7 +66,7 @@ Commentaire --}%
                 <a href="#">
                     <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">
-                        Logout
+                        Déconnexion
                     </span>
                 </a>
             </li>

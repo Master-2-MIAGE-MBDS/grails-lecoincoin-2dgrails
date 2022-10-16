@@ -68,11 +68,51 @@ class ApiController {
     }
 
     def user() {
+        // On vérifie qu'un ID ait bien été fourni
+        if (!params.id)
+            return response.status = 400
+        // On vérifie que l'id corresponde bien à une instance existante
+        def userInstance = User.get(params.id)
+        if (!userInstance)
+            return response.status = 404
 
+        switch (request.getMethod()) {
+
+            case "GET":
+                renderThis(request.getHeader("Accept"), userInstance)
+                break;
+            case "PUT":
+                break;
+            case "PATCH":
+                break;
+            case "DELETE":
+                userInstance.delete(flush:true)
+                return response.status
+                break;
+            default:
+                return response.status = 405
+                break;
+        }
+        return response.status = 406
     }
 
     def users() {
+        def usersInstance = User.list()
 
+        switch (request.getMethod()) {
+
+            case "GET":
+                renderThis(request.getHeader("Accept"), usersInstance)
+                break;
+            case "POST":
+                def data= JSON.parse(request)
+                return response
+                break;
+            default:
+                return response.status = 405
+                break;
+        }
+        return response.status = 406
     }
 
     def renderThis(String acceptHeader, Object object) {
