@@ -74,7 +74,9 @@
                                         ${it.description}
                                     </p>
 
-                                    <p class="price"><b>${it.price}</b> €</p>
+                                    <p class="price">
+                                        <b> <g:formatNumber number="${it.price}" type="number" format="###.##"/></b> €
+                                    </p>
                                 </div>
 
                                 <div class="card-read-more">

@@ -45,11 +45,9 @@ class AnnonceController {
                 annonce.author=user
             }
             def date= new Date().format('yymmddhhmmss')
-            def il=params.illustrationFiles
-            def test=il.getClass()
             List files=[]
                 request.getFiles("illustrationFiles").each { file ->
-                    int indexpoint = file.filename.lastIndexOf(".");
+                    int indexpoint = file.filename.lastIndexOf(".")
                     if (indexpoint>-1){
                     file.transferTo(new File(grailsApplication.config.illustrations.basePath+date+file.filename))
                     files.add(date+file.filename)}
