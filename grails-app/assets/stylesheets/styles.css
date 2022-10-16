@@ -197,7 +197,7 @@ fieldset {
 }
 
 .form-row .name {
-	width: 188px;
+	width: 185px;
 	color: #333;
 	font-size: 15px;
 	font-weight: 700;
@@ -300,7 +300,9 @@ textarea {
 	font-size: 14px;
 	font-family: inherit;
 }
-a{ text-decoration: none}
+a {
+	text-decoration: none;
+}
 
 textarea {
 	resize: none;
@@ -613,7 +615,6 @@ img.card-img-top {
 	background-color: #ff6e14;
 }
 
-
 .container {
 	max-width: 1000px;
 	margin-left: auto;
@@ -622,10 +623,60 @@ img.card-img-top {
 	padding-right: 10px;
 }
 
-.navAds>ul {
+.navAds > ul {
 	display: flex;
 	justify-content: center;
 }
-.navAds>ul>li {
+.navAds > ul > li {
 	margin: 20px;
+}
+
+span.badge {
+	background: #ff6e14;
+}
+
+span.badge.danger {
+	background: red;
+}
+span.badge.admin {
+	background: green;
+}
+input.bouton.bouton-primary {
+	max-width: 124px;
+}
+
+.navAds a:hover {
+	text-decoration: none;
+}
+.navAds a {
+	text-decoration: none;
+}
+
+i.fa.fa-minus-circle.fa-2x {
+	color: red;
+}
+
+i.fa.fa-edit.fa-2x {
+	color: #ff6e14;
+}
+
+.fa-2x {
+	font-size: 2em;
+}
+.fa {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size:20px;
+}
+
+.bouton.bouton-primary {
+	display: inline-flex;
+}
+
+.bouton.bouton-primary i {
+	margin-top: auto;
 }

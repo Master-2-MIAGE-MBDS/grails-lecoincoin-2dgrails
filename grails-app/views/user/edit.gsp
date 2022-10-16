@@ -4,6 +4,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="Styles.css"/>
 
     </head>
@@ -12,20 +13,20 @@
         <div class="container-fostrap card">
             <div class="navAds" role="navigation">
                 <ul>
-                    <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                    <li><g:link class="list bouton bouton-primary" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                    <li><g:link class="create bouton bouton-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                    <li><a class="home bouton bouton-primary" href="${createLink(uri: '/')}"><i class="fa fa-home fa-2x"></i><g:message code="default.home.label"/></a></li>
+                    <li><g:link class="list bouton bouton-primary" action="index"><i class="fa fa-list fa-2x"></i><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                    <li><g:link class="create bouton bouton-primary" action="create"><i class="fa fa-user fa-2x"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 
                 </ul>
             </div>
             <div>
-
                 <h1 class="heading">
-                    Modifier utilisateur
+                    Edit user ${user.username}
                 </h1>
             </div>
 
-        <div id="edit-user" class="content scaffold-edit" role="main">
+        <div id="edit-user" class="content" role="main">
+            <div class="card row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -49,17 +50,17 @@
                         <g:field class="input--style" type="password" name="password" id="password" value="${user.password}"/>
                     </div>
                 </div>
-                <div class="form-row"> <div class="name">Rôle(s) Actuel(s)</div>
+                <div class="form-row"> <div class="name">Current role(s)</div>
                     <div class="value">
                         <g:each var="role" in="${user.getAuthorities()}">
                             <g:if test="${role.authority=="ROLE_ADMIN" }"><span class="badge admin">Administrator</span>
                             </g:if><g:else><span class="badge">Advertiser</span></g:else>
                         </g:each>
-                       <span><b>Supprimer ce(s) rôle(s):</b> <g:checkBox name="deleteRole" id="deleteRole" value="${FALSE}"/></span>
+                       <span><b>Delete these role(s):</b> <g:checkBox name="deleteRole" id="deleteRole" value="${FALSE}"/></span>
                     </div>
-                    <div class="name">Rôle</div>
+                    <div class="name">Role(s)</div>
                     <div class="value">
-                        <g:select name="role" from="${['Aucun','Administrator','Advertiser']}"/>
+                        <g:select name="role" from="${['None','Administrator','Advertiser']}"/>
                     </div>
 
                 </div>
@@ -88,12 +89,12 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <fieldset class="buttons">
-                        <g:submitButton name="Update" class="save btn btn--radius-2 btn-primary" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    <fieldset class="">
+                        <g:submitButton name="Update" class="save bouton bouton--radius-2 bouton-primary" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                     </fieldset>
                 </div>
             </g:form>
-
+            </div>
         </div>
         </div>
     </section>
