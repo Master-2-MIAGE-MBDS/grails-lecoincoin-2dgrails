@@ -49,13 +49,20 @@
                                 </g:if><g:else><span class="badge">Advertiser</span></g:else></g:each>
                         </div>
                     <div class="colonne colonne-7">
-                        <g:form resource="${it}" method="DELETE">
-                            <p class="icon">
-                                <input class="delete iconDelete" type="submit" value=""
-                                       onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
-                                <g:link class="iconView edit"  action="edit" id="${it.id}"></g:link>
-                            </p>
-                        </g:form>
+                        <sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_ADVERTISER,ROLE ADMIN, ROLE ADVERTISER">
+
+                                <g:form resource="${it}" method="DELETE">
+                                    <p class="icon">
+
+                                        <g:link class="iconView edit"  action="edit" id="${it.id}"></g:link>
+
+                                         <input class="delete iconDelete" type="submit" value="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Êtes-vous sûr de vouloir supprimer cette annonce?')}');" />
+
+                                    </p>
+                                </g:form>
+
+                        </sec:ifAnyGranted>
+
                     </div>
                 </g:each>
             </ul>
