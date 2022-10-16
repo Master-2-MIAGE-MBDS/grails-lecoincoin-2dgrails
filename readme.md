@@ -12,8 +12,8 @@ Notre objectif pour ce projet est de réaliser une plateforme complète avec plu
 
 ## Profil utilisateur
 Nous avons deux profils utilisateurs :
-1. L'administrateur qui gère les utilisateurs ainsi que les annonces. Il peut : 
-- se connecter avec un compte de rôle admin,
+1. L'administrateur a un role **ROLE_ADMINISTRATOR** et gère les utilisateurs ainsi que les annonces. Il peut : 
+- se connecter à son compte,
 - voir un dashboard qui résume l'application en indicateurs (exemple: Le nombre d'annonces publiées),
 - créer des annonces pour lui ou un autre utilisateur,
 - modifier des annonces,
@@ -22,8 +22,8 @@ Nous avons deux profils utilisateurs :
 - modifier des utilisateurs,
 - supprimer des utilisateurs.
 
-2. Le client il peut :
-- se connecter avec un compte de rôle client,
+2. Le client a un role **ROLE_ADVERTISER** et peut :
+- se connecter à son compte,
 - créer des annonces pour lui,
 - modifier ses annonces,
 - supprimer ses annonces.
@@ -47,23 +47,25 @@ Ce projet est "open source".
 Les différentes fonctionnalités réalisées sont :
 - Une interface simple et responsive permettant de naviguer dans les différentes pages de l'application,
 - Un utilisateur non connecté peut voir la liste des annonces se trouvant à la page d'accueil de l'application,
-- L'utilisateur doit se connecter pour accéder d'autres fonctionnalités,
-- Un utilisateur peut se connecter et accéder aux différentes pages selon son rôle,
-- Un utilisateur ayant le role d'admin peut créer, modifier, supprimer et afficher des utilisateurs
-- Un utilisateur ayant le role d'admin peut créer, modifier, supprimer et afficher des annonces avec upload des utilisateurs.
-- Toutes les opérations CRUD sont disponibles
+- Un utilisateur peut se connecter et accéder d'autres fonctionnalités selon son rôle,
+- Un utilisateur ayant le role **ROLE_ADMIN** peut créer, modifier, supprimer et afficher des utilisateurs,
+- Un utilisateur ayant le role **ROLE_ADMIN** peut créer, modifier, supprimer et afficher des annonces pour lui ou un autre utilisateur,
+- Un utilisateur ayant le role **ROLE_ADVERTISER** peut créer, modifier, supprimer et afficher ses annonces qui lui sont propres,
+- Toutes les opérations CRUD sont disponibles dans la collection POSTMAN se trouvant
 - Un utilisateur peut se déconnecter
-- 
 ### API rest
-- l'adresse spécifique des APIs : **Adresse**
+- l'adresse spécifique des APIs : 
+  1. **Get annonce by id** : http://localhost:8081/api/annonce/1
+  2. **Get annonces** :
 - L'API renvoie du JSON ou du XML en fonction des paramètres d’appel (header Accept)
 - L’API prend en charge les méthodes GET et DELETE sur les entités représentant les **utilisateurs** ainsi que les **annonces** (ressource individuelle ou collection)
-- Documentation et test des APIs : 
 
-### Idées de fonctionnalités pertinantes
-- L'utilisateur peut chercher des annonces dans une liste d'annonces.
-- L'utilisateur peut chercher des utilisateurs dans une liste utilisateurs
-- 
+
+### Idées de fonctionnalités pertinentes
+- L'utilisateur peut chercher des annonces dans une liste d'annonces,
+- L'utilisateur peut chercher des utilisateurs dans une liste d'utilisateurs,
+- L'admin peut créer une annonce pour un utilisateur autre que lui.
+
 ## Versions
 Version de Grails : 3.3.8
 
@@ -74,7 +76,9 @@ Git : version non pertinente
 ## Technologies
 Les technologies utilisées sont :
 - Grails,
-- java
+- HTML
+- CSS
+- JS
 
 ## Comment contribuer
 Pour contribuer, veuillez demander aux auteurs pour que l'on puisse créer un document contributeur.
