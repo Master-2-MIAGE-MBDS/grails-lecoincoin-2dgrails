@@ -25,9 +25,10 @@
 </head>
 
 <body>
+<h1>Dashboard</h1>
 <section class="wrapper py-5">
     <div class="container-fostrap card">
-        <div class="row">
+        <div class="row justify-content-center">
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -87,6 +88,94 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<h2 class="justify-content-center">Gestion des utilisateurs</h2>
+<section class="wrapper py-5">
+    <div class="container-fostrap card">
+        <div class="row justify-content-center">
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                        <g:link controller="user" action="create">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                   Ajout d'un utilisateur</div>
+                                </div>
+
+                        </g:link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                         <g:link controller="user" action="index">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Liste des utilisateurs</div>
+
+                            </div>
+                         </g:link>
+                            <div class="col-auto">
+                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+<h2 class="justify-content-center">Gestion des annonces</h2>
+<section class="wrapper py-5">
+    <div class="container-fostrap card">
+        <div class="row justify-content-center">
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                        <g:link controller="annonce" action="create">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Ajout d'une annonce</div>
+                            </div>
+                        </g:link>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                        <g:link controller="annonce" action="index">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Liste des annonces</div>
+
+                            </div>
+                        </g:link>
+                            <div class="col-auto">
+                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

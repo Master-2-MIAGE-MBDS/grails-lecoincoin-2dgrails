@@ -207,7 +207,7 @@
             <p>
                 <input class="bouton bouton-primary" type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
             </p>
-            <p class="message">Not registered?<g:link class="create" action="create">Create an account</g:link>
+            <p class="message">Not registered?<g:link controller="user" class="create" action="create">Create an account</g:link>
         </p>
         </form>
     </div>

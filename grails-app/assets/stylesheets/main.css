@@ -166,7 +166,9 @@ img {
     color: #444444;
     text-decoration: underline;
 }
-
+.carte{
+    width: 30px;
+}
 .nav a.home, .nav a.list, .nav a.create {
     background-position: 0.7em center;
     background-repeat: no-repeat;
