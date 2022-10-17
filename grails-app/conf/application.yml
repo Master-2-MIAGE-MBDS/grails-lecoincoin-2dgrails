@@ -127,8 +127,10 @@ environments:
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 server:
-    port: 8081
+    port: 8083
     
 illustrations:
     basePath: /Users/missflawless/Documents/perso/UCA/grails/grails-lecoincoin-2dgrails/grails-app/assets/images/illustrations/
-    baseUrl: http://localhost:8081/assets/illustrations/
+    # baseUrl: http://localhost:8081/assets/illustrations/
+    baseUrl: https://mygrailsapp.herokuapp.com/assets/illustrations/
+    

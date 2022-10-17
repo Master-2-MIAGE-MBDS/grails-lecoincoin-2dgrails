@@ -5,7 +5,7 @@
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
         <asset:stylesheet src="application.css"/>
-        <asset:stylesheet src="Styles.css"/>
+        <asset:stylesheet src="styles.css"/>
 
     </head>
     <body>

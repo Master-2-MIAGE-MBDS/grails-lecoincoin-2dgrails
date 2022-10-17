@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-        <asset:stylesheet src="Styles.css"/>
+        <asset:stylesheet src="styles.css"/>
         <asset:stylesheet src="application.css"/>
 
         <title><g:message code="default.show.label" args="[entityName]" /></title>

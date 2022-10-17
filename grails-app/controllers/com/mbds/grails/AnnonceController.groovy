@@ -49,7 +49,7 @@ class AnnonceController {
                 request.getFiles("illustrationFiles").each { file ->
                     int indexpoint = file.filename.lastIndexOf(".")
                     if (indexpoint>-1){
-                    file.transferTo(new File(grailsApplication.config.illustrations.basePath+date+file.filename))
+                    file.transferTo(new File(grailsApplication.config.illustrations.baseUrl+date+file.filename))
                     files.add(date+file.filename)}
                 }
             files.each {
@@ -97,7 +97,7 @@ class AnnonceController {
             //Si l'utilisateur souhaite ajouter des images à celles déjà existantes
             if (params.addIll) {
                 request.getFiles("illustrationFiles").each { file ->
-                file.transferTo(new File(grailsApplication.config.illustrations.basePath+date+file.filename))
+                file.transferTo(new File(grailsApplication.config.illustrations.baseUrl+date+file.filename))
                 files.add(date+file.filename)
             }}
             files.each {

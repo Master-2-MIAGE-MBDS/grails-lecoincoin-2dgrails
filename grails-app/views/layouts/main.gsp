@@ -69,7 +69,7 @@
                 <a href="#">
                     <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">
-                        Déconnexion
+                        Logout
                     </span>
                 </a>
             </li>
@@ -87,12 +87,12 @@
             <div class="auth">
                 <ul>
                     <sec:ifNotLoggedIn><li><g:form controller="login">
-                        <g:submitButton class="create bouton bouton-primary" name="login" value="Se connecter"/>
+                        <g:submitButton class="create bouton bouton-primary" name="login" value="Login"/>
                     </g:form></li></sec:ifNotLoggedIn>
 
                     <sec:ifLoggedIn>
                         <li><g:form controller="logout">
-                            <g:submitButton class="create bouton bouton-primary" name="logout" value="Se déconnecter"/>
+                            <g:submitButton class="create bouton bouton-primary" name="logout" value="Logout"/>
                         </g:form></li>
                     </sec:ifLoggedIn>
 

@@ -137,7 +137,7 @@
 
                 <div class="form">
                     <h1 class="heading">
-                        Se connecter
+                        Login
                     </h1>
             <g:if test='${flash.message}'>
                 <div class="login_message">${flash.message}</div>

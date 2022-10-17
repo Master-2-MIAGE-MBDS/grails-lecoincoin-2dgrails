@@ -55,11 +55,11 @@
                                 <g:link class="show img-card" action="show" id="${it.id}">
                                     <g:if test="${it.illustrations[0]}">
                                         <img class="card-img-top"
-                                             src="${grailsApplication.config.illustrations.baseUrl + it.illustrations[0].filename}"
+                                             src="${grailsApplication.config.illustrations.baseUrl+it.illustrations[0].filename}"
                                              alt="..."/>
                                     </g:if>
                                     <g:else><img class="card-img-top"
-                                                 src="${grailsApplication.config.illustrations.baseUrl + 'soon.png'}"
+                                                 src="${grailsApplication.config.illustrations.baseUrl+'soon.png'}"
                                                  alt="..."/></g:else>
                                 </g:link>
 

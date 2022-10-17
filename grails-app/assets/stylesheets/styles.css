@@ -680,3 +680,15 @@ i.fa.fa-edit.fa-2x {
 .bouton.bouton-primary i {
 	margin-top: auto;
 }
+
+.col-auto i.fa {
+	font-size: 65Px;
+	color: #d16811;
+}
+
+.text-xs.font-weight-bold {
+	font-size: 22px;
+}
+.h5.mb-0.font-weight-bold.text-gray-800 {
+	font-size: 30px;
+}

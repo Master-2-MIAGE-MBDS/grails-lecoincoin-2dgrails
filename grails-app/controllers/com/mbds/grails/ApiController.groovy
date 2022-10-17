@@ -70,7 +70,7 @@ class ApiController {
                 break;
             case "POST":
                def data= JSON.parse(request)
-                data.folder=grailsApplication.config.illustrations.basePath
+                data.folder=grailsApplication.config.illustrations.baseUrl
                 def annonce=annonceServService.createAnnonce(data)
                 render(status :response.status,text: 'Annonce added')
                 return annonce
