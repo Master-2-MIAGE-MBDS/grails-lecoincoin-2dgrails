@@ -40,7 +40,7 @@
                             <div class="name">Title</div>
 
                             <div class="value">
-                                <g:field minlength="5" class="input--style" type="text" name="title" id="title" placeholder="Titre de l'annonce" required=""/>
+                                <g:field minlength="5" class="input--style" type="text" name="title" id="title" placeholder="Ad title" required=""/>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             <div class="name">Price</div>
 
                             <div class="value">
-                                <input pattern="[0-9]+([,][0-9]{1,2})?" class="input--style" type="number decimal" placeholder="Prix Ex:12,999" name="price" value="" required="" step="0.01" min="0.0" id="price">
+                                <input pattern="[0-9]+([,][0-9]{1,2})?" class="input--style" type="number decimal" placeholder="Price Ex:12,999" name="price" value="" required="" step="0.01" min="0.0" id="price">
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
 
                             <div class="value">
                                 <g:textArea class="textarea--style" name="description" id="description"
-                                            placeholder="Description de l'annonce " required=""/>
+                                            placeholder="Ad Description " required=""/>
 
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="card-footer">
                             <fieldset class="">
                                 <g:submitButton name="create" class="save bouton bouton--radius-2 bouton-primary"
-                                                value="Create Ads"/>
+                                                value="Create Ad"/>
                             </fieldset>
                         </div>
                     </g:form>

@@ -30,8 +30,20 @@ class ApiController {
                 renderThis(request.getHeader("Accept"), annonceInstance)
                 break;
             case "PUT":
+                def data= JSON.parse(request)
+                if(!data.title || !data.price || !data.description || !data.active || !data.author){
+                    render(status :400,text: 'Missing parameters')
+                    return
+                }else {
+                    def annonce = annonceServService.updateAnnonce(params.id,data)
+                    render(status :response.status,text: 'Annonce added')
+                    return annonce
+                }
                 break;
             case "PATCH":
+                def data= JSON.parse(request)
+                def annonce = annonceServService.updateAnnonce(params.id,data)
+                return annonce
                 break;
             case "DELETE":
                 annonceInstance.delete(flush:true)
@@ -58,7 +70,9 @@ class ApiController {
                 break;
             case "POST":
                def data= JSON.parse(request)
+                data.folder=grailsApplication.config.illustrations.basePath
                 def annonce=annonceServService.createAnnonce(data)
+                render(status :response.status,text: 'Annonce added')
                 return annonce
                 break;
             default:
@@ -82,12 +96,26 @@ class ApiController {
                 renderThis(request.getHeader("Accept"), userInstance)
                 break;
             case "PUT":
+                def data= JSON.parse(request)
+                if(!data.username || !data.password){
+                    render(status :400,text: 'Missing parameters')
+                    return
+                }else {
+                    userServService.updateUser(params.id,data)
+                    render(status :response.status,text: 'User updated')
+                    return
+                }
                 break;
             case "PATCH":
+                def data= JSON.parse(request)
+                userServService.updateUser(params.id,data)
+                render(status :response.status,text: 'User updated')
+                return
                 break;
             case "DELETE":
-                userInstance.delete(flush:true)
-                return response.status
+                userServService.deleteUser(params.id)
+                render(status :response.status,text: 'User deleted')
+                return
                 break;
             default:
                 return response.status = 405
@@ -108,7 +136,7 @@ class ApiController {
                 def data= JSON.parse(request)
 
                 userServService.createUser(data)
-
+                render(status :response.status,text: 'User created')
                 return response
                 break;
             default:
