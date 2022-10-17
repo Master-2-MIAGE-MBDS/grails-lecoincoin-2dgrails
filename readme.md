@@ -52,7 +52,7 @@ Les différentes fonctionnalités réalisées sont :
 - Un utilisateur ayant le role **ROLE_ADMIN** peut créer, modifier, supprimer et afficher des annonces pour lui ou un autre utilisateur,
 - Un utilisateur ayant le role **ROLE_ADVERTISER** peut créer, modifier, supprimer et afficher ses annonces qui lui sont propres,
 - Un utilisateur peut se déconnecter
-- Toutes les opérations CRUD sont disponibles dans la collection POSTMAN [LeCoinCoin](/CollectionPOSTMAN/) se trouvant dans le dossier [CollectionPOSTMAN](/CollectionPOSTMAN) de la racine.
+- Toutes les opérations CRUD sont disponibles dans la collection POSTMAN [LeCoinCoin](/CollectionPOSTMAN/PostmanCollectionLeCoinCoin.json) se trouvant dans le dossier [CollectionPOSTMAN](/CollectionPOSTMAN) de la racine.
 ### API rest
 - l'adresse spécifique des APIs : 
 - **Annonces**
@@ -79,7 +79,6 @@ Les différentes fonctionnalités réalisées sont :
 
 ### Déploiement sur Heroku
 Nous avons déployer sur Heroku. Le lien de notre site: https://mygrailsapp.herokuapp.com/.
-Cependa
 
 ## Versions
 Version de Grails : 3.3.8
