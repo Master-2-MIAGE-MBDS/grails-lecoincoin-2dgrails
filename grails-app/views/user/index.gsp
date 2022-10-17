@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <asset:stylesheet src="StyleUsers.css"/>
+        <asset:stylesheet src="styleuser.css"/>
         <g:set var="entityName" value="${message(code: 'user.label', default: 'Users')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>

@@ -11,7 +11,7 @@
 
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="bootstrap.css"/>
-    <asset:stylesheet src="styleNav.css"/>
+    <asset:stylesheet src="stylenav.css"/>
     <asset:stylesheet src="sb-admin-2.min.css"/>
     <asset:stylesheet src="main.css"/>
 
