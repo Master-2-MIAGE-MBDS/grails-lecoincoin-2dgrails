@@ -77,6 +77,10 @@ Les différentes fonctionnalités réalisées sont :
 - L'utilisateur peut chercher des utilisateurs dans une liste d'utilisateurs,
 - L'admin peut créer une annonce pour un utilisateur autre que lui.
 
+### Déploiement sur Heroku
+Nous avons déployer sur Heroku. Le lien de notre site: https://mygrailsapp.herokuapp.com/.
+Cependa
+
 ## Versions
 Version de Grails : 3.3.8
 
