@@ -1,4 +1,9 @@
 # Projet grails Master 2 MBDS 2022 par DIALLO Fatoumata Binta et DIEYE Khadidiatou
+## Vidéo de démonstration
+https://www.youtube.com/watch?v=0jKSeSU7YH4
+[Lien de la démonstration](https://www.youtube.com/watch?v=0jKSeSU7YH4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0jKSeSU7YH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Informations générales 
 Cette application intitulée **LeCoinCoin** est une application de dépôt de vente touchant à tout ce qui peut se vendre ou s'acheter.
 Dans l'application, les annonces sont publiées et visibles par tous les utilisateurs.
@@ -73,6 +78,7 @@ Les différentes fonctionnalités réalisées sont :
 
 
 ### Idées de fonctionnalités pertinentes
+- Un dashboard résume toutes les activités de l'application,
 - L'utilisateur peut chercher des annonces dans une liste d'annonces,
 - L'utilisateur peut chercher des utilisateurs dans une liste d'utilisateurs,
 - L'admin peut créer une annonce pour un utilisateur autre que lui.
