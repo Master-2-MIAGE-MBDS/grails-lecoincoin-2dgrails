@@ -2,7 +2,6 @@
 ## Vidéo de démonstration
 https://www.youtube.com/watch?v=0jKSeSU7YH4
 [Lien de la démonstration](https://www.youtube.com/watch?v=0jKSeSU7YH4)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0jKSeSU7YH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Informations générales 
 Cette application intitulée **LeCoinCoin** est une application de dépôt de vente touchant à tout ce qui peut se vendre ou s'acheter.
